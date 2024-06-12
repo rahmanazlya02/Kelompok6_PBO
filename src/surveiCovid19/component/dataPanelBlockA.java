@@ -12,13 +12,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
 import surveiCovid19.Database;
-import surveiCovid19.component.editPanel;
 import surveiCovid19.perusahaan;
 import surveiCovid19.responden;
 
 /**
  *
- * 
+ * @author Kelompok6
  */
 public class dataPanelBlockA extends javax.swing.JPanel {
     private final JScrollPane contentScrollPane;
@@ -140,18 +139,18 @@ public class dataPanelBlockA extends javax.swing.JPanel {
             }
             
             // Isi tabel perusahaan
-            for (perusahaan perusahaan : Database.getInstance().selectPerusahaan()) {
+            for (perusahaan pers : Database.getInstance().selectPerusahaan()) {
                 perusahaanTableModel.addRow(new Object[] {
-                    perusahaan.getNamaUsaha(),
-                    perusahaan.getProvinsi(),
-                    perusahaan.getKota(),
-                    perusahaan.getProduk(),
-                    perusahaan.getProdukLain(),
-                    perusahaan.getKatUsaha(),
-                    perusahaan.getOmset(),
-                    perusahaan.getJmlPegawaiSblm(),
-                    perusahaan.getJmlPegawaiSkrg(),
-                    perusahaan.getOperasi()
+                    pers.getNamaUsaha(),
+                    pers.getProvinsi(),
+                    pers.getKota(),
+                    pers.getProduk(),
+                    pers.getProdukLain(),
+                    pers.getKatUsaha(),
+                    pers.getOmset(),
+                    pers.getJmlPegawaiSblm(),
+                    pers.getJmlPegawaiSkrg(),
+                    pers.getOperasi()
                 });
             }
             

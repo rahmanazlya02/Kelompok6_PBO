@@ -5,13 +5,12 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import surveiCovid19.kondisiFinansial;
-import surveiCovid19.idRumahTangga;
-import surveiCovid19.umurLebihLima;
 import surveiCovid19.user;
 
 
 
-/**
+/*
+*@author Kelompok6
  */
 
 
@@ -125,12 +124,16 @@ public class Database implements Serializable{
                 responden.setJabatan(rs.getString("jabatan"));
                 responden.setJenisKelamin(rs.getString("jenis_kelamin"));
                 responden.setUmur(rs.getInt("umur")); 
+                respondens.add(responden);
             }// end of checking while if rs.next available
         } // end of try
         catch(SQLException ex){
             throw ex;
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
         }
-    
         return respondens;
     }
     
@@ -151,7 +154,7 @@ public class Database implements Serializable{
                 perusahaan.setProvinsi(rs.getString("provinsi"));
                 perusahaan.setKota(rs.getString("kota"));
                 perusahaan.setProduk(rs.getString("produk"));
-                perusahaan.setProduk(rs.getString("produk_lain"));
+                perusahaan.setProdukLain(rs.getString("produk_lain"));
                 perusahaan.setKatUsaha(rs.getString("kat_usaha"));
                 perusahaan.setOmset(rs.getString("omset"));
                 perusahaan.setJmlPegawaiSblm(rs.getInt("jml_Pegawai_Sblm"));
@@ -249,7 +252,7 @@ public class Database implements Serializable{
     
     public ArrayList<kondisiFinansial> searchKondisiFinansial(String searchText) throws SQLException {
     ArrayList<kondisiFinansial> searchResults = new ArrayList<>();
-    String query = "SELECT * FROM kondisi_finansial WHERE income_sblm_covid LIKE ? OR penurunan_pendapatan LIKE ? OR penurunan_lanjutan LIKE ? OR peningkatan_pendapatan LIKE ? OR peningkatan_lanjutan LIKE ? OR upaya_meningkatkan_pendapatan LIKE ?";
+    String query = "SELECT * FROM kondisi_finansial WHERE income_sblm_covid LIKE ? OR penurunan LIKE ? OR penurunan_lain LIKE ? OR peningkatan LIKE ? OR peningkatan_lain LIKE ? OR upaya_peningkatan LIKE ?";
     
     try (Connection conn = getConnection(); PreparedStatement stmt = conn.prepareStatement(query)) {
         String searchPattern = "%" + searchText + "%";
@@ -261,11 +264,11 @@ public class Database implements Serializable{
             while (rs.next()) {
                 kondisiFinansial finansial = new kondisiFinansial();
                 finansial.setIncomeSblmCovid(rs.getString("income_sblm_covid"));
-                finansial.setPenurunan(rs.getString("penurunan_pendapatan"));
-                finansial.setPenurunanLain(rs.getString("penurunan_lanjutan"));
-                finansial.setPeningkatan(rs.getString("peningkatan_pendapatan"));
-                finansial.setPeningkatanLain(rs.getString("peningkatan_lanjutan"));
-                finansial.setUpayaPeningkatan(rs.getString("upaya_meningkatkan_pendapatan"));
+                finansial.setPenurunan(rs.getString("penurunan"));
+                finansial.setPenurunanLain(rs.getString("penurunan_lain"));
+                finansial.setPeningkatan(rs.getString("peningkatan"));
+                finansial.setPeningkatanLain(rs.getString("peningkatan_lain"));
+                finansial.setUpayaPeningkatan(rs.getString("upaya_peningkatan"));
                 searchResults.add(finansial);
             }
         }

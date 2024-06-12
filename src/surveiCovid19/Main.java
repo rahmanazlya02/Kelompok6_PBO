@@ -6,7 +6,7 @@ package surveiCovid19;
 
 /**
  *
- * @author asus
+ * @author Kelompok6
  */
 public class Main {
     public static void main(String[] args) {

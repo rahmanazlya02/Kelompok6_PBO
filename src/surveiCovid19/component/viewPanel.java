@@ -13,7 +13,7 @@ import surveiCovid19.Database;
 
 /**
  *
- * @author asus
+ *@author Kelompok6
  */
 public class viewPanel extends javax.swing.JPanel {
     private final JScrollPane contentScrollPane;

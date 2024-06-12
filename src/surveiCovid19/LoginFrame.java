@@ -58,9 +58,9 @@ public class LoginFrame extends javax.swing.JFrame {
         sideLogin.setBackground(new java.awt.Color(81, 137, 198));
         sideLogin.setPreferredSize(new java.awt.Dimension(250, 400));
 
-        label1.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        label1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         label1.setForeground(new java.awt.Color(244, 242, 242));
-        label1.setText("Registrasi Sosial-Ekonomi");
+        label1.setText("Survei Dampak Covid-19 Terhadap Pelaku Usaha");
         label1.setVisible(true);
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -69,11 +69,11 @@ public class LoginFrame extends javax.swing.JFrame {
 
         label2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         label2.setForeground(new java.awt.Color(244, 242, 242));
-        label2.setText("ekonomi, dan tingkat kesejahteraan. ");
+        label2.setText("untuk mengetahui pengaruh Covid-19 terhadap sektor ekonomi.");
 
         label3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         label3.setForeground(new java.awt.Color(244, 242, 242));
-        label3.setText("pengumpulan data seluruh penduduk yang terdiri atas profil, kondisi sosial, ");
+        label3.setText("pengumpulan data mengenai perusahaan dan kondisi finansialnya");
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/13561786_5285960-01.png"))); // NOI18N

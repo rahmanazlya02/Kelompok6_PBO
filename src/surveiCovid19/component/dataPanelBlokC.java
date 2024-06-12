@@ -12,14 +12,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
 import surveiCovid19.Database;
-import surveiCovid19.anggotaKeluarga;
 import surveiCovid19.kondisiFinansial;
-import surveiCovid19.umurLebihLima;
 
 
 /**
  *
- * @author Imalia Rosyida
+ * @author Kelompok6
  */
 public class dataPanelBlokC extends javax.swing.JPanel {
     private final JScrollPane contentScrollPane;

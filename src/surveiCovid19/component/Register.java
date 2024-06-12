@@ -15,7 +15,7 @@ import surveiCovid19.user;
 
 /**
  *
- * @author Windows10
+ * @author Kelompok6
  */
 public class Register extends javax.swing.JPanel {
 
