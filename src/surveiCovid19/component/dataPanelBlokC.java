@@ -52,7 +52,7 @@ public class dataPanelBlokC extends javax.swing.JPanel {
 
         titleLabel.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        titleLabel.setText("Data Kuesioner Blok. IV");
+        titleLabel.setText("Data Kuesioner Blok C");
 
         searchTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

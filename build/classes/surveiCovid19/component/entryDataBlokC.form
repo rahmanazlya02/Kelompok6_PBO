@@ -110,15 +110,13 @@
                                               <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="Kondisi" min="-2" pref="139" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="Peningkatan" max="32767" attributes="0"/>
-                                                  <Component id="Penurunan" max="32767" attributes="0"/>
-                                                  <Component id="PenurunanLanjutan" max="32767" attributes="0"/>
-                                                  <Component id="PeningkatanLanjutan" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="Upaya" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="Peningkatan" max="32767" attributes="0"/>
+                                              <Component id="Penurunan" max="32767" attributes="0"/>
+                                              <Component id="PenurunanLanjutan" max="32767" attributes="0"/>
+                                              <Component id="PeningkatanLanjutan" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="Upaya" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="Kondisi" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
