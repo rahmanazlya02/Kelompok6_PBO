@@ -4,10 +4,13 @@
  */
 package surveiCovid19.component;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
@@ -46,7 +49,8 @@ public class dataPanelBlokC extends javax.swing.JPanel {
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         jScrollPane2 = new javax.swing.JScrollPane();
         jScrollPane1 = new javax.swing.JScrollPane();
-        dataTable = new javax.swing.JTable();
+        finansialTable = new javax.swing.JTable();
+        eksportButton = new javax.swing.JButton();
 
         titleLabel.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -66,8 +70,8 @@ public class dataPanelBlokC extends javax.swing.JPanel {
             }
         });
 
-        dataTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        dataTable.setModel(new javax.swing.table.DefaultTableModel(
+        finansialTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        finansialTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -90,9 +94,18 @@ public class dataPanelBlokC extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(dataTable);
+        jScrollPane1.setViewportView(finansialTable);
 
         jScrollPane2.setViewportView(jScrollPane1);
+
+        eksportButton.setBackground(new java.awt.Color(255, 153, 153));
+        eksportButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        eksportButton.setText("Export To Csv");
+        eksportButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eksportButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -105,13 +118,15 @@ public class dataPanelBlokC extends javax.swing.JPanel {
                         .addComponent(titleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 983, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(searchTextField)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 937, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(eksportButton)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(searchTextField)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 937, Short.MAX_VALUE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -126,7 +141,9 @@ public class dataPanelBlokC extends javax.swing.JPanel {
                     .addComponent(searchButton, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(290, 290, 290)
+                .addGap(18, 18, 18)
+                .addComponent(eksportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(238, 238, 238)
                 .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -147,7 +164,7 @@ public class dataPanelBlokC extends javax.swing.JPanel {
     }//GEN-LAST:event_searchButtonActionPerformed
 
     private void searchAndUpdateTable(String searchText) {
-    DefaultTableModel dtm = (DefaultTableModel) dataTable.getModel();
+    DefaultTableModel dtm = (DefaultTableModel) finansialTable.getModel();
     
     // Clear the table before updating it with search results
     while (dtm.getRowCount() > 0) {
@@ -185,8 +202,42 @@ public class dataPanelBlokC extends javax.swing.JPanel {
      
     }//GEN-LAST:event_searchTextFieldActionPerformed
 
+    private void eksportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eksportButtonActionPerformed
+        // TODO add your handling code here:
+         // Show file chooser dialog
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Specify a file to save");    
+        
+        int userSelection = fileChooser.showSaveDialog(this);
+        
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            try (FileWriter fileWriter = new FileWriter(fileChooser.getSelectedFile() + ".csv")) {
+                DefaultTableModel finansialTableModel = (DefaultTableModel) finansialTable.getModel();
+                
+                // Write Perusahaan Table Header
+                for (int i = 0; i < finansialTableModel.getColumnCount(); i++) {
+                    fileWriter.write(finansialTableModel.getColumnName(i) + ",");
+                }
+                fileWriter.write("\n");
+                
+                // Write Perusahaan Table Data
+                for (int i = 0; i < finansialTableModel.getRowCount(); i++) {
+                    for (int j = 0; j < finansialTableModel.getColumnCount(); j++) {
+                        fileWriter.write(finansialTableModel.getValueAt(i, j).toString() + ",");
+                    }
+                    fileWriter.write("\n");
+                }
+           
+                JOptionPane.showMessageDialog(this, "Data successfully exported.", "Success", JOptionPane.INFORMATION_MESSAGE);
+            } catch (IOException ex) {
+                Logger.getLogger(dataPanelBlockA.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(this, "Error writing to file.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_eksportButtonActionPerformed
+
     private void loadTableData(){ 
-       DefaultTableModel dtm = (DefaultTableModel) dataTable.getModel();
+       DefaultTableModel dtm = (DefaultTableModel) finansialTable.getModel();
        //DefaultTableModel dtm1 = (DefaultTableModel) dataUmurLebihLima.getModel();
         //refresh tabel 
         while(dtm.getRowCount()>0){
@@ -211,8 +262,9 @@ public class dataPanelBlokC extends javax.swing.JPanel {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable dataTable;
+    private javax.swing.JButton eksportButton;
     private javax.swing.Box.Filler filler1;
+    private javax.swing.JTable finansialTable;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton searchButton;

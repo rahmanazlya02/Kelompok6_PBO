@@ -4,10 +4,13 @@
  */
 package surveiCovid19.component;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
@@ -46,6 +49,7 @@ public class dataPanelBlockA extends javax.swing.JPanel {
         perusahaanTable = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         respondenTable = new javax.swing.JTable();
+        exportButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(245, 245, 245));
 
@@ -90,6 +94,15 @@ public class dataPanelBlockA extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(respondenTable);
 
+        exportButton.setBackground(new java.awt.Color(255, 153, 153));
+        exportButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        exportButton.setText("Export To Csv");
+        exportButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exportButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -97,9 +110,11 @@ public class dataPanelBlockA extends javax.swing.JPanel {
             .addComponent(titleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 779, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(exportButton)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 779, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2)))
                 .addContainerGap(464, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -111,9 +126,62 @@ public class dataPanelBlockA extends javax.swing.JPanel {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(exportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(60, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void exportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportButtonActionPerformed
+        // TODO add your handling code here:
+        // Show file chooser dialog
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Specify a file to save");    
+        
+        int userSelection = fileChooser.showSaveDialog(this);
+        
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            try (FileWriter fileWriter = new FileWriter(fileChooser.getSelectedFile() + ".csv")) {
+                DefaultTableModel perusahaanTableModel = (DefaultTableModel) perusahaanTable.getModel();
+                DefaultTableModel respondenTableModel = (DefaultTableModel) respondenTable.getModel();
+                
+                // Write Perusahaan Table Header
+                for (int i = 0; i < perusahaanTableModel.getColumnCount(); i++) {
+                    fileWriter.write(perusahaanTableModel.getColumnName(i) + ",");
+                }
+                fileWriter.write("\n");
+                
+                // Write Perusahaan Table Data
+                for (int i = 0; i < perusahaanTableModel.getRowCount(); i++) {
+                    for (int j = 0; j < perusahaanTableModel.getColumnCount(); j++) {
+                        fileWriter.write(perusahaanTableModel.getValueAt(i, j).toString() + ",");
+                    }
+                    fileWriter.write("\n");
+                }
+                
+                fileWriter.write("\n"); // New line between tables
+                
+                // Write Responden Table Header
+                for (int i = 0; i < respondenTableModel.getColumnCount(); i++) {
+                    fileWriter.write(respondenTableModel.getColumnName(i) + ",");
+                }
+                fileWriter.write("\n");
+                
+                // Write Responden Table Data
+                for (int i = 0; i < respondenTableModel.getRowCount(); i++) {
+                    for (int j = 0; j < respondenTableModel.getColumnCount(); j++) {
+                        fileWriter.write(respondenTableModel.getValueAt(i, j).toString() + ",");
+                    }
+                    fileWriter.write("\n");
+                }
+                
+                JOptionPane.showMessageDialog(this, "Data successfully exported.", "Success", JOptionPane.INFORMATION_MESSAGE);
+            } catch (IOException ex) {
+                Logger.getLogger(dataPanelBlockA.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(this, "Error writing to file.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_exportButtonActionPerformed
 
     private void loadTableData() {
         DefaultTableModel respondenTableModel = (DefaultTableModel) respondenTable.getModel();
@@ -161,6 +229,7 @@ public class dataPanelBlockA extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton exportButton;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable perusahaanTable;
