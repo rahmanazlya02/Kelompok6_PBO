@@ -12,7 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import surveiCovid19.Database;
 import surveiCovid19.MainFrame;
-import surveiCovid19.kondisiFinansial;
+import surveiCovid19.blokC;
 import javax.swing.JScrollPane;
 
 public class entryDataBlokC extends javax.swing.JPanel {
@@ -53,7 +53,6 @@ public class entryDataBlokC extends javax.swing.JPanel {
         buttonGroupKunjungan = new javax.swing.ButtonGroup();
         contentScrollPanel = new javax.swing.JScrollPane();
         pnlEntry = new javax.swing.JPanel();
-        jLabel27 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -70,14 +69,12 @@ public class entryDataBlokC extends javax.swing.JPanel {
         Peningkatan = new javax.swing.JComboBox<>();
         PeningkatanLanjutan = new javax.swing.JTextField();
         Upaya = new javax.swing.JComboBox<>();
-        jLabel28 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        idPerusahaan = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(206, 214, 224));
 
         contentScrollPanel.setBorder(null);
-
-        jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel27.setText("BLOK IV. DAFTAR KELUARGA/PENDUDUK DI WILAYAH KHUSUS");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setText("Kondisi Pendapatan Usaha Dibanding Sebelum Covid-19");
@@ -120,6 +117,9 @@ public class entryDataBlokC extends javax.swing.JPanel {
 
         Upaya.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Penambahan modal kerja", "Penambahan tenaga kerja", "Peningkatan teknologi", "Kapasitas produksi meningkat" }));
 
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel4.setText("ID Perusahaan");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -127,6 +127,7 @@ public class entryDataBlokC extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6)
                     .addComponent(jLabel2)
@@ -146,7 +147,8 @@ public class entryDataBlokC extends javax.swing.JPanel {
                                 .addComponent(PenurunanLanjutan)
                                 .addComponent(PeningkatanLanjutan)
                                 .addComponent(Upaya, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Kondisi, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(Kondisi, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(idPerusahaan, javax.swing.GroupLayout.Alignment.TRAILING))))
                     .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -157,7 +159,11 @@ public class entryDataBlokC extends javax.swing.JPanel {
                 .addComponent(inputDataLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(59, 59, 59)
                 .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(idPerusahaan, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(Kondisi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -189,9 +195,6 @@ public class entryDataBlokC extends javax.swing.JPanel {
                 .addGap(72, 72, 72))
         );
 
-        jLabel28.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel28.setText("DAFTAR ANGGOTA KELUARGA");
-
         javax.swing.GroupLayout pnlEntryLayout = new javax.swing.GroupLayout(pnlEntry);
         pnlEntry.setLayout(pnlEntryLayout);
         pnlEntryLayout.setHorizontalGroup(
@@ -206,7 +209,7 @@ public class entryDataBlokC extends javax.swing.JPanel {
             .addGroup(pnlEntryLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addContainerGap(194, Short.MAX_VALUE))
         );
 
         contentScrollPanel.setViewportView(pnlEntry);
@@ -215,26 +218,27 @@ public class entryDataBlokC extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(contentScrollPanel, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(contentScrollPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1240, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(contentScrollPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
+            .addComponent(contentScrollPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void kirimButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kirimButtonActionPerformed
         // TODO add your handling code here:
-        kondisiFinansial finansial = new kondisiFinansial();
-        finansial.setIncomeSblmCovid((String)Kondisi.getSelectedItem());
-        finansial.setPenurunan((String) Penurunan.getSelectedItem());
-        finansial.setPenurunanLain(PenurunanLanjutan.getText());
-        finansial.setPeningkatan((String) Peningkatan.getSelectedItem());
-        finansial.setPeningkatanLain(PeningkatanLanjutan.getText());
-        finansial.setUpayaPeningkatan((String) Upaya.getSelectedItem());
+        blokC blokC = new blokC();
+        blokC.setIdPerusahaan(Integer.parseInt(idPerusahaan.getText()));
+        blokC.setIncomeSblmCovid((String)Kondisi.getSelectedItem());
+        blokC.setPenurunan((String) Penurunan.getSelectedItem());
+        blokC.setPenurunanLain(PenurunanLanjutan.getText());
+        blokC.setPeningkatan((String) Peningkatan.getSelectedItem());
+        blokC.setPeningkatanLain(PeningkatanLanjutan.getText());
+        blokC.setUpayaPeningkatan((String) Upaya.getSelectedItem());
 
         try {
-            Database.getInstance().insertKondisiFinansial(finansial);
+            Database.getInstance().insertBlokC(blokC);
             clearForm();
             JOptionPane.showMessageDialog(this, "Data Berhasil Tersimpan");
         } catch (SQLException ex) {
@@ -259,13 +263,13 @@ public class entryDataBlokC extends javax.swing.JPanel {
     private javax.swing.ButtonGroup buttonGroupPeternakan;
     private javax.swing.ButtonGroup buttonGroupTanamanPangan;
     private javax.swing.JScrollPane contentScrollPanel;
+    private javax.swing.JTextField idPerusahaan;
     private javax.swing.JLabel inputDataLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

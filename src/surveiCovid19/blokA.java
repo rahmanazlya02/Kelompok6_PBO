@@ -1,7 +1,10 @@
 package surveiCovid19;
 
-public class perusahaan {
+public class blokA {
     private int idPerusahaan;
+    private String jabatan;
+    private String jenisKelamin;
+    private int umur;
     private String namaUsaha;
     private String provinsi;
     private String kota;
@@ -19,6 +22,30 @@ public class perusahaan {
 
     public void setIdPerusahaan(int idPerusahaan) {
         this.idPerusahaan = idPerusahaan;
+    }
+    
+    public String getJabatan() {
+        return jabatan;
+    }
+
+    public void setJabatan(String jabatan) {
+        this.jabatan = jabatan;
+    }
+
+    public int getUmur() {
+        return umur;
+    }
+
+    public void setUmur(int umur) {
+        this.umur = umur;
+    }
+
+    public String getJenisKelamin() {
+        return jenisKelamin;
+    }
+
+    public void setJenisKelamin(String jenisKelamin) {
+        this.jenisKelamin = jenisKelamin;
     }
 
     public String getNamaUsaha() {
@@ -100,4 +127,5 @@ public class perusahaan {
     public void setOperasi(String operasi) {
         this.operasi = operasi;
     }
+    
 }

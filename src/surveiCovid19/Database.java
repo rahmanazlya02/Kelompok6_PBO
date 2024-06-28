@@ -4,7 +4,8 @@ import java.io.Serializable;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import surveiCovid19.kondisiFinansial;
+import javax.swing.table.DefaultTableModel;
+import surveiCovid19.blokC;
 import surveiCovid19.user;
 
 
@@ -20,7 +21,7 @@ public class Database implements Serializable{
     private final String DB_TYPE = "mysql";
     private final String DB_HOST = "localhost";
     private final String DB_PORT = "3306";
-    private final String DB_NAME = "kelompok6_2";
+    private final String DB_NAME = "kelompok6";
     private final String DB_USER = "root";
     private final String DB_PASS = "";
     
@@ -34,45 +35,34 @@ public class Database implements Serializable{
         return instance;
     }
     
-    public void insertResponden(responden responden)throws SQLException{
-        Connection conn = getConnection();
-        try{
-            String sql = "INSERT INTO responden (jabatan, jenis_kelamin, umur) VALUES (?,?, ?)";
-            PreparedStatement pstmt = conn.prepareStatement(sql);
-
-
-//          idPer = kode unik dari setpuiap rumahtangga yang ada (gabungan dari beberapa kode yang ada pada KIP [refer ke kelas idRumahTangga])
-            pstmt.setString(1, responden.getJabatan());
-            pstmt.setString(2, responden.getJenisKelamin());
-            pstmt.setInt(3, responden.getUmur());
-            
-            pstmt.executeUpdate();
-        } catch(SQLException ex){
-            throw ex;
-        } finally{
-            if(conn != null){
-                conn.close();
-            }
-        }
+        
+    public Connection getConnection() throws SQLException{
+        return DriverManager.getConnection("jdbc:"+DB_TYPE+"://"+DB_HOST+":"+DB_PORT+"/"+DB_NAME, DB_USER,DB_PASS);
+        
     }
     
-    public void insertPerusahaan(perusahaan perusahaan)throws SQLException{
+    
+    public void insertBlokA(blokA blokA)throws SQLException{
         Connection conn = getConnection();
         try{
-            String sql = "INSERT INTO perusahaan (nama_usaha,provinsi,kota, produk,produk_lain,kat_usaha,omset,jml_pegawai_Sblm,jml_pegawai_Skrg,operasi) VALUES (?,?,?,?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO bloka (id_perusahaan,jabatan, jenis_kelamin, umur, nama_usaha,provinsi,kota, produk,produk_lain,kat_usaha,omset,jml_pegawai_Sblm,jml_pegawai_Skrg,operasi) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement pstmt = conn.prepareStatement(sql);
 
 //          idPer = kode unik dari setpuiap rumahtangga yang ada (gabungan dari beberapa kode yang ada pada KIP [refer ke kelas idRumahTangga])
-            pstmt.setString(1, perusahaan.getNamaUsaha());
-            pstmt.setString(2, perusahaan.getProvinsi());
-            pstmt.setString(3, perusahaan.getKota());
-            pstmt.setString(4, perusahaan.getProduk());
-            pstmt.setString(5, perusahaan.getProdukLain());
-            pstmt.setString(6, perusahaan.getKatUsaha());
-            pstmt.setString(7, perusahaan.getOmset());
-            pstmt.setInt(8, perusahaan.getJmlPegawaiSblm());
-            pstmt.setInt(9, perusahaan.getJmlPegawaiSkrg());
-            pstmt.setString(10, perusahaan.getOperasi());
+            pstmt.setInt(1, blokA.getIdPerusahaan());
+            pstmt.setString(2, blokA.getJabatan());
+            pstmt.setString(3, blokA.getJenisKelamin());
+            pstmt.setInt(4, blokA.getUmur());
+            pstmt.setString(5, blokA.getNamaUsaha());
+            pstmt.setString(6, blokA.getProvinsi());
+            pstmt.setString(7, blokA.getKota());
+            pstmt.setString(8, blokA.getProduk());
+            pstmt.setString(9, blokA.getProdukLain());
+            pstmt.setString(10, blokA.getKatUsaha());
+            pstmt.setString(11, blokA.getOmset());
+            pstmt.setInt(12, blokA.getJmlPegawaiSblm());
+            pstmt.setInt(13, blokA.getJmlPegawaiSkrg());
+            pstmt.setString(14, blokA.getOperasi());
             
             pstmt.executeUpdate();
         } catch(SQLException ex){
@@ -84,18 +74,19 @@ public class Database implements Serializable{
         }
     }
     
-    public void insertKondisiFinansial(kondisiFinansial finansial)throws SQLException{
+    public void insertBlokC(blokC blokC)throws SQLException{
         Connection conn = getConnection();
         try{
-            String sql = "INSERT INTO kondisi_finansial (income_Sblm_Covid, penurunan, penurunan_lain, peningkatan, peningkatan_lain, upaya_peningkatan) VALUES(?,?,?,?,?,?)";
+            String sql = "INSERT INTO blokc (id_perusahaan, income_Sblm_Covid, penurunan, penurunan_lain, peningkatan, peningkatan_lain, upaya_peningkatan) VALUES(?,?,?,?,?,?,?)";
             PreparedStatement pstmt = conn.prepareStatement(sql);
 
-            pstmt.setString(1, finansial.getIncomeSblmCovid());
-            pstmt.setString(2, finansial.getPenurunan());
-            pstmt.setString(3, finansial.getPenurunanLain());
-            pstmt.setString(4, finansial.getPeningkatan());
-            pstmt.setString(5, finansial.getPeningkatanLain());
-            pstmt.setString(6, finansial.getUpayaPeningkatan());
+            pstmt.setInt(1, blokC.getIdPerusahaan());
+            pstmt.setString(2, blokC.getIncomeSblmCovid());
+            pstmt.setString(3, blokC.getPenurunan());
+            pstmt.setString(4, blokC.getPenurunanLain());
+            pstmt.setString(5, blokC.getPeningkatan());
+            pstmt.setString(6, blokC.getPeningkatanLain());
+            pstmt.setString(7, blokC.getUpayaPeningkatan());
             
             pstmt.executeUpdate();
         } catch(SQLException ex){
@@ -107,101 +98,75 @@ public class Database implements Serializable{
         }
     }
     
-    public List<responden> selectResponden() throws SQLException{
-//      create a List of RumahTangga 
-        List<responden> respondens = new ArrayList<>();
+    public List<blokA>  selectBlokA() throws SQLException{
+        List<blokA> blokAlist = new ArrayList<>();
        
         Connection conn = getConnection();
         
         try{
-            String sql = "SELECT * FROM responden";
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-            
-            while(rs.next()){
-//              dibutuhkan constructor kosong pada kelas responden
-                responden responden = new responden();
-                responden.setJabatan(rs.getString("jabatan"));
-                responden.setJenisKelamin(rs.getString("jenis_kelamin"));
-                responden.setUmur(rs.getInt("umur")); 
-                respondens.add(responden);
-            }// end of checking while if rs.next available
-        } // end of try
-        catch(SQLException ex){
-            throw ex;
-        } finally {
-            if (conn != null) {
-                conn.close();
-            }
-        }
-        return respondens;
-    }
-    
-    public List<perusahaan>  selectPerusahaan() throws SQLException{
-        List<perusahaan> perusahaanList = new ArrayList<>();
-       
-        Connection conn = getConnection();
-        
-        try{
-            String sql = "SELECT * FROM perusahaan";
+            String sql = "SELECT * FROM bloka";
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             
             while(rs.next()){
 //              dibutuhkan constructor kosong pada kelas anggotaKeluarga
-                perusahaan perusahaan = new perusahaan();
-                perusahaan.setNamaUsaha(rs.getString("nama_usaha"));
-                perusahaan.setProvinsi(rs.getString("provinsi"));
-                perusahaan.setKota(rs.getString("kota"));
-                perusahaan.setProduk(rs.getString("produk"));
-                perusahaan.setProdukLain(rs.getString("produk_lain"));
-                perusahaan.setKatUsaha(rs.getString("kat_usaha"));
-                perusahaan.setOmset(rs.getString("omset"));
-                perusahaan.setJmlPegawaiSblm(rs.getInt("jml_Pegawai_Sblm"));
-                perusahaan.setJmlPegawaiSkrg(rs.getInt("jml_Pegawai_Skrg"));
-                perusahaan.setOperasi(rs.getString("operasi"));
+                blokA blokA = new blokA();
+                blokA.setIdPerusahaan(rs.getInt("id_Perusahaan"));
+                blokA.setJabatan(rs.getString("jabatan"));
+                blokA.setJenisKelamin(rs.getString("jenis_kelamin"));
+                blokA.setUmur(rs.getInt("umur"));
+                blokA.setNamaUsaha(rs.getString("nama_usaha"));
+                blokA.setProvinsi(rs.getString("provinsi"));
+                blokA.setKota(rs.getString("kota"));
+                blokA.setProduk(rs.getString("produk"));
+                blokA.setProdukLain(rs.getString("produk_lain"));
+                blokA.setKatUsaha(rs.getString("kat_usaha"));
+                blokA.setOmset(rs.getString("omset"));
+                blokA.setJmlPegawaiSblm(rs.getInt("jml_Pegawai_Sblm"));
+                blokA.setJmlPegawaiSkrg(rs.getInt("jml_Pegawai_Skrg"));
+                blokA.setOperasi(rs.getString("operasi"));
               
-                perusahaanList.add(perusahaan);
+                blokAlist.add(blokA);
             }// end of checking while if rs.next available
         } // end of try
         catch(SQLException ex){
             throw ex;
         }
-        return perusahaanList;
+        return blokAlist;
     }
     
-    public List<kondisiFinansial> selectkondisiFinansial() throws SQLException{ 
-        List<kondisiFinansial> finansialList = new ArrayList<>();
+    public List<blokC> selectBlokC() throws SQLException{ 
+        List<blokC> blokClist = new ArrayList<>();
        
         Connection conn = getConnection();
         
         try{
-            String sql = "SELECT * FROM kondisi_finansial";
+            String sql = "SELECT * FROM blokc";
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             
             while(rs.next()){
 //              dibutuhkan constructor kosong pada kelas finansial
-                kondisiFinansial finansial = new kondisiFinansial();
-                finansial.setIncomeSblmCovid(rs.getString("income_Sblm_Covid"));
-                finansial.setPenurunan(rs.getString("penurunan"));
-                finansial.setPenurunanLain(rs.getString("penurunan_lain"));
-                finansial.setPeningkatan(rs.getString("peningkatan"));// nanti (semua var) dipastikan lagi mengenai penamaan variabel di databasenya
-                finansial.setPeningkatanLain(rs.getString("peningkatan_lain"));
-                finansial.setUpayaPeningkatan(rs.getString("upaya_peningkatan"));
+                blokC blokC = new blokC();
+                blokC.setIdPerusahaan(rs.getInt("id_Perusahaan"));
+                blokC.setIncomeSblmCovid(rs.getString("income_Sblm_Covid"));
+                blokC.setPenurunan(rs.getString("penurunan"));
+                blokC.setPenurunanLain(rs.getString("penurunan_lain"));
+                blokC.setPeningkatan(rs.getString("peningkatan"));// nanti (semua var) dipastikan lagi mengenai penamaan variabel di databasenya
+                blokC.setPeningkatanLain(rs.getString("peningkatan_lain"));
+                blokC.setUpayaPeningkatan(rs.getString("upaya_peningkatan"));
                
                 // menambahkan satu baris finansial beserta keseluruhan var nya ke dalam satu row pada List anggotakeluarga
                 // nanti bisa ditampilkan di tabel, pakai ini 
-                finansialList.add(finansial);
+                blokClist.add(blokC);
             }// end of checking while if rs.next available
-        } // end of try
+        } // end of try // end of try
         catch(SQLException ex){
             throw ex;
         }
-        return finansialList;
+        return blokClist;
     }
-    
-    
+     
     public user getUser(String username)throws SQLException{
         user user = new user();
         Connection conn = getConnection();
@@ -244,38 +209,65 @@ public class Database implements Serializable{
             }
         }
     }
-    
-    public Connection getConnection() throws SQLException{
-        return DriverManager.getConnection("jdbc:"+DB_TYPE+"://"+DB_HOST+":"+DB_PORT+"/"+DB_NAME, DB_USER,DB_PASS);
-        
-    }
-    
-    public ArrayList<kondisiFinansial> searchKondisiFinansial(String searchText) throws SQLException {
-    ArrayList<kondisiFinansial> searchResults = new ArrayList<>();
-    String query = "SELECT * FROM kondisi_finansial WHERE income_sblm_covid LIKE ? OR penurunan LIKE ? OR penurunan_lain LIKE ? OR peningkatan LIKE ? OR peningkatan_lain LIKE ? OR upaya_peningkatan LIKE ?";
+
+    public ArrayList<blokC> searchBlokC(String searchText) throws SQLException {
+    ArrayList<blokC> searchResults = new ArrayList<>();
+    String query = "SELECT * FROM blokc WHERE id_Perusahaan = ? OR income_sblm_covid LIKE ? OR penurunan LIKE ? OR penurunan_lain LIKE ? OR peningkatan LIKE ? OR peningkatan_lain LIKE ? OR upaya_peningkatan LIKE ?";
     
     try (Connection conn = getConnection(); PreparedStatement stmt = conn.prepareStatement(query)) {
         String searchPattern = "%" + searchText + "%";
-        for (int i = 1; i <= 6; i++) {
+        for (int i = 1; i <= 7; i++) {
             stmt.setString(i, searchPattern);
         }
         
         try (ResultSet rs = stmt.executeQuery()) {
             while (rs.next()) {
-                kondisiFinansial finansial = new kondisiFinansial();
-                finansial.setIncomeSblmCovid(rs.getString("income_sblm_covid"));
-                finansial.setPenurunan(rs.getString("penurunan"));
-                finansial.setPenurunanLain(rs.getString("penurunan_lain"));
-                finansial.setPeningkatan(rs.getString("peningkatan"));
-                finansial.setPeningkatanLain(rs.getString("peningkatan_lain"));
-                finansial.setUpayaPeningkatan(rs.getString("upaya_peningkatan"));
-                searchResults.add(finansial);
+                blokC blokC = new blokC();
+                blokC.setIdPerusahaan(rs.getInt("id_Perusahaan"));
+                blokC.setIncomeSblmCovid(rs.getString("income_sblm_covid"));
+                blokC.setPenurunan(rs.getString("penurunan"));
+                blokC.setPenurunanLain(rs.getString("penurunan_lain"));
+                blokC.setPeningkatan(rs.getString("peningkatan"));
+                blokC.setPeningkatanLain(rs.getString("peningkatan_lain"));
+                blokC.setUpayaPeningkatan(rs.getString("upaya_peningkatan"));
+                searchResults.add(blokC);
             }
         }
     }
+        return searchResults;
+    }
     
-    return searchResults;
-}
-    
+    public ArrayList<blokA> searchBlokA(String searchText) throws SQLException {
+        ArrayList<blokA> searchResults = new ArrayList<>();
+        String query = "SELECT * FROM bloka WHERE id_Perusahaan = ? OR jabatan LIKE ? OR jenis_kelamin LIKE ? OR umur LIKE ? OR nama_usaha LIKE ? OR provinsi LIKE ? OR kota LIKE ? OR produk LIKE ? OR produk_lain LIKE ? OR kat_usaha LIKE ? OR omset LIKE ? OR jml_pegawai_Sblm LIKE ? OR jml_pegawai_Skrg LIKE ? OR operasi LIKE ?";
+        try (Connection conn = getConnection(); PreparedStatement stmt = conn.prepareStatement(query)) {
+            String searchPattern = "%" + searchText + "%";
+            stmt.setString(1, searchText);
+            for (int i = 2; i <= 14; i++) {
+                stmt.setString(i, searchPattern);
+            }
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    blokA blokA = new blokA();
+                    blokA.setIdPerusahaan(rs.getInt("id_Perusahaan"));
+                    blokA.setJabatan(rs.getString("jabatan"));
+                    blokA.setJenisKelamin(rs.getString("jenis_kelamin"));
+                    blokA.setUmur(rs.getInt("umur"));
+                    blokA.setNamaUsaha(rs.getString("nama_usaha"));
+                    blokA.setProvinsi(rs.getString("provinsi"));
+                    blokA.setKota(rs.getString("kota"));
+                    blokA.setProduk(rs.getString("produk"));
+                    blokA.setProdukLain(rs.getString("produk_lain"));
+                    blokA.setKatUsaha(rs.getString("kat_usaha"));
+                    blokA.setOmset(rs.getString("omset"));
+                    blokA.setJmlPegawaiSblm(rs.getInt("jml_Pegawai_Sblm"));
+                    blokA.setJmlPegawaiSkrg(rs.getInt("jml_Pegawai_Skrg"));
+                    blokA.setOperasi(rs.getString("operasi"));
+                    searchResults.add(blokA);
+                }
+            }
+        }
+        return searchResults;
+    }
     
 }// end of class

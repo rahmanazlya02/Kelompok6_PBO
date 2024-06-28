@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
 import surveiCovid19.Database;
-import surveiCovid19.kondisiFinansial;
+import surveiCovid19.blokC;
 
 
 /**
@@ -48,7 +48,7 @@ public class dataPanelBlokC extends javax.swing.JPanel {
         searchButton = new javax.swing.JButton();
         eksportButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        finansialTable = new javax.swing.JTable();
+        blokCtable = new javax.swing.JTable();
         viewButton = new javax.swing.JButton();
         refreshButton = new javax.swing.JButton();
 
@@ -65,7 +65,7 @@ public class dataPanelBlokC extends javax.swing.JPanel {
                 searchTextFieldActionPerformed(evt);
             }
         });
-        add(searchTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 920, 30));
+        add(searchTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 920, 30));
 
         searchButton.setBackground(new java.awt.Color(81, 137, 198));
         searchButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -76,7 +76,7 @@ public class dataPanelBlokC extends javax.swing.JPanel {
                 searchButtonActionPerformed(evt);
             }
         });
-        add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 120, 100, 30));
+        add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 130, 100, 30));
 
         eksportButton.setBackground(new java.awt.Color(81, 137, 198));
         eksportButton.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
@@ -87,22 +87,22 @@ public class dataPanelBlokC extends javax.swing.JPanel {
                 eksportButtonActionPerformed(evt);
             }
         });
-        add(eksportButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 650, -1, 34));
+        add(eksportButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 680, -1, 34));
 
-        finansialTable.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        finansialTable.setModel(new javax.swing.table.DefaultTableModel(
+        blokCtable.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        blokCtable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Kondisi Pendapatan Usaha", "Penurunan Pendapatan Usaha", "Besaran Spesifik Penurunan", "Peningkatan Pendapatan Usaha", "Besaran Spesifik Peningkatan", "Upaya Meningkatkan Pendapatan"
+                "ID Perusahaan", "Kondisi Pendapatan Usaha", "Penurunan Pendapatan Usaha", "Besaran Spesifik Penurunan", "Peningkatan Pendapatan Usaha", "Besaran Spesifik Peningkatan", "Upaya Meningkatkan Pendapatan"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                true, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -113,10 +113,10 @@ public class dataPanelBlokC extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        finansialTable.setRowHeight(30);
-        jScrollPane1.setViewportView(finansialTable);
+        blokCtable.setRowHeight(30);
+        jScrollPane1.setViewportView(blokCtable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 1150, 460));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 1150, 460));
 
         viewButton.setBackground(new java.awt.Color(81, 137, 198));
         viewButton.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
@@ -127,7 +127,7 @@ public class dataPanelBlokC extends javax.swing.JPanel {
                 viewButtonActionPerformed(evt);
             }
         });
-        add(viewButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 650, 130, 34));
+        add(viewButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 680, 130, 34));
 
         refreshButton.setBackground(new java.awt.Color(81, 137, 198));
         refreshButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -138,7 +138,7 @@ public class dataPanelBlokC extends javax.swing.JPanel {
                 refreshButtonActionPerformed(evt);
             }
         });
-        add(refreshButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 120, 100, 30));
+        add(refreshButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 130, 100, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
@@ -156,7 +156,7 @@ public class dataPanelBlokC extends javax.swing.JPanel {
     }//GEN-LAST:event_searchButtonActionPerformed
 
     private void searchAndUpdateTable(String searchText) {
-    DefaultTableModel dtm = (DefaultTableModel) finansialTable.getModel();
+    DefaultTableModel dtm = (DefaultTableModel) blokCtable.getModel();
     
     // Clear the table before updating it with search results
     while (dtm.getRowCount() > 0) {
@@ -165,17 +165,19 @@ public class dataPanelBlokC extends javax.swing.JPanel {
     
     try {
         // Perform the search query
-        ArrayList<kondisiFinansial> searchResults = Database.getInstance().searchKondisiFinansial(searchText);
+        ArrayList<blokC> searchResults = Database.getInstance().searchBlokC(searchText);
         
         // Update the table with search results
-        for (kondisiFinansial finansial : searchResults) {
+        for (blokC blokC : searchResults) {
             dtm.addRow(new Object[]{
-                finansial.getIncomeSblmCovid(),
-                finansial.getPenurunan(),
-                finansial.getPenurunanLain(),
-                finansial.getPeningkatan(),
-                finansial.getPeningkatanLain(),
-                finansial.getUpayaPeningkatan()
+                blokC.getIdPerusahaan(),
+                blokC.getIncomeSblmCovid(),
+                blokC.getIncomeSblmCovid(),
+                blokC.getPenurunan(),
+                blokC.getPenurunanLain(),
+                blokC.getPeningkatan(),
+                blokC.getPeningkatanLain(),
+                blokC.getUpayaPeningkatan()
             });
         }
         
@@ -204,7 +206,7 @@ public class dataPanelBlokC extends javax.swing.JPanel {
         
         if (userSelection == JFileChooser.APPROVE_OPTION) {
             try (FileWriter fileWriter = new FileWriter(fileChooser.getSelectedFile() + ".csv")) {
-                DefaultTableModel finansialTableModel = (DefaultTableModel) finansialTable.getModel();
+                DefaultTableModel finansialTableModel = (DefaultTableModel) blokCtable.getModel();
                 
                 // Write Perusahaan Table Header
                 for (int i = 0; i < finansialTableModel.getColumnCount(); i++) {
@@ -222,7 +224,7 @@ public class dataPanelBlokC extends javax.swing.JPanel {
            
                 JOptionPane.showMessageDialog(this, "Data successfully exported.", "Success", JOptionPane.INFORMATION_MESSAGE);
             } catch (IOException ex) {
-                Logger.getLogger(dataPanelBlockA.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(dataPanelBlokA.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(this, "Error writing to file.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
@@ -234,10 +236,11 @@ public class dataPanelBlokC extends javax.swing.JPanel {
 
     private void refreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshButtonActionPerformed
         // TODO add your handling code here:
+        loadTableData();
     }//GEN-LAST:event_refreshButtonActionPerformed
 
     private void loadTableData(){ 
-       DefaultTableModel dtm = (DefaultTableModel) finansialTable.getModel();
+       DefaultTableModel dtm = (DefaultTableModel) blokCtable.getModel();
        //DefaultTableModel dtm1 = (DefaultTableModel) dataUmurLebihLima.getModel();
         //refresh tabel 
         while(dtm.getRowCount()>0){
@@ -249,8 +252,16 @@ public class dataPanelBlokC extends javax.swing.JPanel {
         
         try{
             //isi tabel 
-            for(kondisiFinansial finansial: Database.getInstance().selectkondisiFinansial()){
-                dtm.addRow(new Object[]{finansial.getIncomeSblmCovid(),finansial.getPenurunan(),finansial.getPenurunanLain(),finansial.getPeningkatan(),finansial.getPeningkatanLain(),finansial.getUpayaPeningkatan()}); 
+            for(blokC blokC: Database.getInstance().selectBlokC()){
+                dtm.addRow(new Object[]{
+                    
+                    blokC.getIdPerusahaan(),
+                    blokC.getIncomeSblmCovid(),
+                    blokC.getPenurunan(),
+                    blokC.getPenurunanLain(),
+                    blokC.getPeningkatan(),
+                    blokC.getPeningkatanLain(),
+                    blokC.getUpayaPeningkatan()}); 
             }
             /*for(umurLebihLima artUmurLebihLima: Database.getInstance().selectumurLebihLima()){
                 dtm1.addRow(new Object[]{artUmurLebihLima.getGangguan(),artUmurLebihLima.getJenisGangguan(),artUmurLebihLima.getIjazah(),artUmurLebihLima.getStatusKerja(),artUmurLebihLima.getLapUsaha(),artUmurLebihLima.getStatusKedudukan(),artUmurLebihLima.getKepemilikanUsaha(),artUmurLebihLima.getJumlahUsaha(), artUmurLebihLima.getLapUsahaUtama()}); 
@@ -262,8 +273,8 @@ public class dataPanelBlokC extends javax.swing.JPanel {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable blokCtable;
     private javax.swing.JButton eksportButton;
-    private javax.swing.JTable finansialTable;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton refreshButton;
     private javax.swing.JButton searchButton;

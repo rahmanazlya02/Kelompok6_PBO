@@ -2,14 +2,23 @@ package surveiCovid19;
 
 import java.sql.SQLException;
 
-public class kondisiFinansial {
+public class blokC {
+    private int idPerusahaan;
     private String incomeSblmCovid;
     private String penurunan;
     private String penurunanLain;
     private String peningkatan;
     private String peningkatanLain;
     private String upayaPeningkatan;
+    
+    public int getIdPerusahaan() {
+        return idPerusahaan;
+    }
 
+    public void setIdPerusahaan(int idPerusahaan) {
+        this.idPerusahaan = idPerusahaan;
+    }
+    
     public String getIncomeSblmCovid() {
         return incomeSblmCovid;
     }

@@ -8,7 +8,7 @@ import surveiCovid19.component.HomePanel;
 import surveiCovid19.component.dataPanelBlokC;
 import surveiCovid19.component.entryDataBlokA;
 import surveiCovid19.component.entryDataBlokC;
-import surveiCovid19.component.dataPanelBlockA;
+import surveiCovid19.component.dataPanelBlokA;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -333,8 +333,8 @@ public class MainFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(navigationPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
-            .addComponent(contentScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
+            .addComponent(navigationPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
+            .addComponent(contentScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
         );
 
         pack();
@@ -362,7 +362,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void lihatDataBlokAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatDataBlokAActionPerformed
         // TODO add your handling code here:
-        contentScrollPane.setViewportView(new dataPanelBlockA(contentScrollPane));
+        contentScrollPane.setViewportView(new dataPanelBlokA(contentScrollPane));
     }//GEN-LAST:event_lihatDataBlokAActionPerformed
 
     private void lihatDataBlokAMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lihatDataBlokAMouseExited

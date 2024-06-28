@@ -339,7 +339,7 @@ public class viewPanel extends javax.swing.JPanel {
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
-        this.contentScrollPane.setViewportView(new dataPanelBlockA(contentScrollPane));
+        this.contentScrollPane.setViewportView(new dataPanelBlokA(contentScrollPane));
     }//GEN-LAST:event_backButtonActionPerformed
 
 
