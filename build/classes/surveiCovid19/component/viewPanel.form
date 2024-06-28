@@ -17,79 +17,132 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="backButton" min="-2" pref="65" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="idperLabel" min="-2" pref="70" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="380" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="21" pref="21" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="titleLabel" min="-2" pref="321" max="-2" attributes="0"/>
-                  <Group type="102" alignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="titleLabel" min="-2" pref="593" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="title2Label" alignment="0" min="-2" pref="228" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel20" max="32767" attributes="0"/>
-                                  <Component id="jLabel6" min="-2" pref="227" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel9" min="-2" pref="219" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+                                      <Component id="namaUsahaLabel" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="jLabel20" max="32767" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel6" min="-2" pref="227" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jabatanLabel" min="-2" pref="70" max="-2" attributes="0"/>
+                                          <Component id="jkLabel" min="-2" pref="70" max="-2" attributes="0"/>
+                                          <Component id="idLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="jLabel10" max="32767" attributes="0"/>
+                                              <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel16" min="-2" pref="41" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="276" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="kotaLabel" min="-2" pref="75" max="-2" attributes="0"/>
+                                          <Component id="provinsiLabel" min="-2" pref="61" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="jLabel7" min="-2" pref="227" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+                                              <Component id="umurLabel" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel17" min="-2" pref="227" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+                                              <Component id="produkLabel" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jLabel18" min="-2" pref="269" max="-2" attributes="0"/>
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Component id="kategoriUsahaLabel" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jLabel21" min="-2" pref="227" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
+                                                  <Component id="produkLainLabel" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jLabel19" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
+                                                      <Component id="jLabel27" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel28" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel30" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel29" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel31" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel32" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel33" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel34" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace min="74" max="32767" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="kondisiLabel" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="operasiLabel" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="pegawaiSekarangLabel" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="omsetLabel" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="penurunanLabel" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="spesifikPenurunanLabel" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="peningkatanLabel" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="spesifikPeningkatanLabel" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="upayaLabel" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel23" min="-2" pref="227" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
+                                              <Component id="pegawaiSebelumLabel" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="548" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="312" max="-2" attributes="0"/>
                   </Group>
               </Group>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="backButton" min="-2" pref="65" max="-2" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="jLabel19" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabel18" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="jLabel23" alignment="0" min="-2" pref="227" max="-2" attributes="0"/>
-                          <Component id="jLabel21" alignment="0" min="-2" pref="227" max="-2" attributes="0"/>
-                          <Component id="jLabel27" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel28" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel30" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel29" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="statusKedudukanJLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="kepemilikanUsahaJLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jumlahUsahaJLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lapUsahaUtamaJLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="ijazahJLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="statusKerjaJLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lapUsahaJLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jenisGangguanJLabel" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel17" alignment="0" min="-2" pref="227" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="jLabel16" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabel10" alignment="1" max="32767" attributes="0"/>
-                              <Component id="jLabel9" alignment="0" min="-2" pref="219" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jLabel7" alignment="0" min="-2" pref="227" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="nikJLabel" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jenisKelaminJLabel" alignment="0" max="32767" attributes="0"/>
-                              <Component id="statusHubunganJLabel" alignment="0" max="32767" attributes="0"/>
-                              <Component id="umurJLabel" alignment="0" max="32767" attributes="0"/>
-                              <Component id="gangguanJLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="namaJLabel" min="-2" pref="70" max="-2" attributes="0"/>
-                          <Component id="noUrutJLabel" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
-                          <Component id="idperLabel" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-              </Group>
-              <EmptySpace min="-2" pref="380" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -100,93 +153,113 @@
               <Component id="titleLabel" min="-2" pref="29" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="title2Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                      <Component id="title2Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="idLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <Component id="idperLabel" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel6" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
-                  <Component id="noUrutJLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel20" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
-                  <Component id="namaJLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel7" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
-                  <Component id="nikJLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel9" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                  <Component id="jenisKelaminJLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jabatanLabel" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel20" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
+                  <Component id="jkLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel7" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
+                  <Component id="umurLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel9" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                  <Component id="namaUsahaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel10" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                  <Component id="statusHubunganJLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="provinsiLabel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel16" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
-                  <Component id="umurJLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="kotaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel17" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                  <Component id="produkLabel" alignment="3" min="-2" pref="19" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel21" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                  <Component id="produkLainLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel18" min="-2" pref="23" max="-2" attributes="0"/>
+                  <Component id="kategoriUsahaLabel" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel17" min="-2" pref="23" max="-2" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
-                      <Component id="gangguanJLabel" min="-2" pref="19" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel21" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                  <Component id="jenisGangguanJLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel19" min="-2" pref="23" max="-2" attributes="0"/>
+                  <Component id="omsetLabel" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel18" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                          <Component id="ijazahJLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel19" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                          <Component id="statusKerjaJLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="lapUsahaJLabel" min="-2" max="-2" attributes="0"/>
+                      <Component id="pegawaiSebelumLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jLabel23" alignment="1" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel27" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="statusKedudukanJLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel28" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="kepemilikanUsahaJLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel30" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jumlahUsahaJLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
+                  <Component id="pegawaiSekarangLabel" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel29" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="lapUsahaUtamaJLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
+                  <Component id="operasiLabel" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
+                  <Component id="kondisiLabel" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
+                  <Component id="penurunanLabel" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
+                  <Component id="spesifikPenurunanLabel" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
+                  <Component id="peningkatanLabel" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
+                  <Component id="spesifikPeningkatanLabel" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
+                  <Component id="upayaLabel" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Component id="backButton" min="-2" pref="35" max="-2" attributes="0"/>
-              <EmptySpace pref="26" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -197,7 +270,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Data Kuesioner Regsosek"/>
+        <Property name="text" type="java.lang.String" value="Data Kuesioner Survei Dampak Covid 19 Terhadap Pelaku Usaha"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="backButton">
@@ -211,7 +284,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="lapUsahaUtamaJLabel">
+    <Component class="javax.swing.JLabel" name="penurunanLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel32"/>
       </Properties>
@@ -221,7 +294,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Jenis Kelamin"/>
+        <Property name="text" type="java.lang.String" value="Nama Usaha"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
@@ -229,7 +302,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="No. Urut Anggota Keluarga"/>
+        <Property name="text" type="java.lang.String" value="Jabatan"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel23">
@@ -237,7 +310,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Lapangan Pekerjaan dari usaha utama"/>
+        <Property name="text" type="java.lang.String" value="Jumlah Pegawai Sebelum Covid"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel27">
@@ -245,7 +318,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="status kedudukan dalam pekerjaan utama"/>
+        <Property name="text" type="java.lang.String" value="Jumlah Pegawai Saat Ini"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel28">
@@ -253,7 +326,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="kepemilikan usaha"/>
+        <Property name="text" type="java.lang.String" value="Status Operasi Perusahaan"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel29">
@@ -261,7 +334,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Lapangan usaha dari usaha utama"/>
+        <Property name="text" type="java.lang.String" value="Besar Penuruan"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel30">
@@ -269,30 +342,30 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Jumlah usaha yang dimiliki"/>
+        <Property name="text" type="java.lang.String" value="Kondisi Pendapatan Dibanding Sebelum Covid"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="noUrutJLabel">
+    <Component class="javax.swing.JLabel" name="jabatanLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="namaJLabel">
+    <Component class="javax.swing.JLabel" name="jkLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jenisKelaminJLabel">
+    <Component class="javax.swing.JLabel" name="namaUsahaLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel3"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="statusHubunganJLabel">
+    <Component class="javax.swing.JLabel" name="provinsiLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel4"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="umurJLabel">
+    <Component class="javax.swing.JLabel" name="kotaLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel5"/>
       </Properties>
@@ -302,22 +375,22 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="14" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="No Urut Keluarga"/>
+        <Property name="text" type="java.lang.String" value="ID Perusahaan"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="gangguanJLabel">
+    <Component class="javax.swing.JLabel" name="produkLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel11"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="idperLabel">
     </Component>
-    <Component class="javax.swing.JLabel" name="ijazahJLabel">
+    <Component class="javax.swing.JLabel" name="kategoriUsahaLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel12"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="statusKerjaJLabel">
+    <Component class="javax.swing.JLabel" name="omsetLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel13"/>
       </Properties>
@@ -327,10 +400,10 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Umur"/>
+        <Property name="text" type="java.lang.String" value="Kota"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lapUsahaJLabel">
+    <Component class="javax.swing.JLabel" name="pegawaiSebelumLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel14"/>
       </Properties>
@@ -340,7 +413,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Status Hubungan dengan kepala keluarga"/>
+        <Property name="text" type="java.lang.String" value="Provinsi"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel17">
@@ -348,10 +421,10 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Memiliki kesulitan/gangguan"/>
+        <Property name="text" type="java.lang.String" value="Produk"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="statusKedudukanJLabel">
+    <Component class="javax.swing.JLabel" name="pegawaiSekarangLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel25"/>
       </Properties>
@@ -361,15 +434,15 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Status Pekerjaan"/>
+        <Property name="text" type="java.lang.String" value="Omset"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="kepemilikanUsahaJLabel">
+    <Component class="javax.swing.JLabel" name="operasiLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel26"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jumlahUsahaJLabel">
+    <Component class="javax.swing.JLabel" name="kondisiLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel31"/>
       </Properties>
@@ -379,7 +452,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Ijazah"/>
+        <Property name="text" type="java.lang.String" value="Kategori Usaha"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
@@ -387,7 +460,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="NIK"/>
+        <Property name="text" type="java.lang.String" value="Umur"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel20">
@@ -395,7 +468,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Nama"/>
+        <Property name="text" type="java.lang.String" value="Jenis Kelamin"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel21">
@@ -403,17 +476,74 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Jenis Kesulitan/gangguan"/>
+        <Property name="text" type="java.lang.String" value="Produk Lain"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jenisGangguanJLabel">
+    <Component class="javax.swing.JLabel" name="produkLainLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="nikJLabel">
+    <Component class="javax.swing.JLabel" name="umurLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel22"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel31">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Besar Spesifik Penurunan"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel32">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Besar Peningkatan"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel33">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Besar Spesifik Peningkatan"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel34">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Upaya Meningkatkan Usaha"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="spesifikPenurunanLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="peningkatanLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel2"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="spesifikPeningkatanLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel3"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="upayaLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel4"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="idLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel5"/>
       </Properties>
     </Component>
   </SubComponents>

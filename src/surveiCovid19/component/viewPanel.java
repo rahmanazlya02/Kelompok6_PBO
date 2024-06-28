@@ -39,23 +39,23 @@ public class viewPanel extends javax.swing.JPanel {
             ResultSet rs2 = pst2.executeQuery();
             while(rs.next()){
                 idperLabel.setText(idPer);
-                noUrutJLabel.setText(rs.getString("noUrut"));
-                namaJLabel.setText(rs.getString("nama"));
-                nikJLabel.setText(rs.getString("nik"));
-                jenisKelaminJLabel.setText(rs.getString("jenisKelamin"));
-                statusHubunganJLabel.setText(rs.getString("statusHubungan"));
-                umurJLabel.setText(rs.getString("umur"));
+                jabatanLabel.setText(rs.getString("noUrut"));
+                jkLabel.setText(rs.getString("nama"));
+                umurLabel.setText(rs.getString("nik"));
+                namaUsahaLabel.setText(rs.getString("jenisKelamin"));
+                provinsiLabel.setText(rs.getString("statusHubungan"));
+                kotaLabel.setText(rs.getString("umur"));
             }
             while(rs2.next()){
-                gangguanJLabel.setText(rs2.getString("gangguan"));
-                jenisGangguanJLabel.setText(rs2.getString("jenisGangguan"));
-                ijazahJLabel.setText(rs2.getString("ijazah"));
-                statusKerjaJLabel.setText(rs2.getString("statusKerja"));
-                lapUsahaJLabel.setText(rs2.getString("lapUsaha"));
-                statusKedudukanJLabel.setText(rs2.getString("statusKedudukan"));
-                kepemilikanUsahaJLabel.setText(rs2.getString("kepemilikanUsaha"));
-                jumlahUsahaJLabel.setText(rs2.getString("jumlahUsaha"));
-                lapUsahaUtamaJLabel.setText(rs2.getString("lapUsahaUtama"));
+                produkLabel.setText(rs2.getString("gangguan"));
+                produkLainLabel.setText(rs2.getString("jenisGangguan"));
+                kategoriUsahaLabel.setText(rs2.getString("ijazah"));
+                omsetLabel.setText(rs2.getString("statusKerja"));
+                pegawaiSebelumLabel.setText(rs2.getString("lapUsaha"));
+                pegawaiSekarangLabel.setText(rs2.getString("statusKedudukan"));
+                operasiLabel.setText(rs2.getString("kepemilikanUsaha"));
+                kondisiLabel.setText(rs2.getString("jumlahUsaha"));
+                penurunanLabel.setText(rs2.getString("lapUsahaUtama"));
             }
         }catch(SQLException e){
             throw e;
@@ -73,7 +73,7 @@ public class viewPanel extends javax.swing.JPanel {
 
         titleLabel = new javax.swing.JLabel();
         backButton = new javax.swing.JButton();
-        lapUsahaUtamaJLabel = new javax.swing.JLabel();
+        penurunanLabel = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
@@ -81,33 +81,42 @@ public class viewPanel extends javax.swing.JPanel {
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
-        noUrutJLabel = new javax.swing.JLabel();
-        namaJLabel = new javax.swing.JLabel();
-        jenisKelaminJLabel = new javax.swing.JLabel();
-        statusHubunganJLabel = new javax.swing.JLabel();
-        umurJLabel = new javax.swing.JLabel();
+        jabatanLabel = new javax.swing.JLabel();
+        jkLabel = new javax.swing.JLabel();
+        namaUsahaLabel = new javax.swing.JLabel();
+        provinsiLabel = new javax.swing.JLabel();
+        kotaLabel = new javax.swing.JLabel();
         title2Label = new javax.swing.JLabel();
-        gangguanJLabel = new javax.swing.JLabel();
+        produkLabel = new javax.swing.JLabel();
         idperLabel = new javax.swing.JLabel();
-        ijazahJLabel = new javax.swing.JLabel();
-        statusKerjaJLabel = new javax.swing.JLabel();
+        kategoriUsahaLabel = new javax.swing.JLabel();
+        omsetLabel = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        lapUsahaJLabel = new javax.swing.JLabel();
+        pegawaiSebelumLabel = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        statusKedudukanJLabel = new javax.swing.JLabel();
+        pegawaiSekarangLabel = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        kepemilikanUsahaJLabel = new javax.swing.JLabel();
-        jumlahUsahaJLabel = new javax.swing.JLabel();
+        operasiLabel = new javax.swing.JLabel();
+        kondisiLabel = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        jenisGangguanJLabel = new javax.swing.JLabel();
-        nikJLabel = new javax.swing.JLabel();
+        produkLainLabel = new javax.swing.JLabel();
+        umurLabel = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        spesifikPenurunanLabel = new javax.swing.JLabel();
+        peningkatanLabel = new javax.swing.JLabel();
+        spesifikPeningkatanLabel = new javax.swing.JLabel();
+        upayaLabel = new javax.swing.JLabel();
+        idLabel = new javax.swing.JLabel();
 
         titleLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        titleLabel.setText("Data Kuesioner Regsosek");
+        titleLabel.setText("Data Kuesioner Survei Dampak Covid 19 Terhadap Pelaku Usaha");
 
         backButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         backButton.setText("Back");
@@ -117,146 +126,206 @@ public class viewPanel extends javax.swing.JPanel {
             }
         });
 
-        lapUsahaUtamaJLabel.setText("jLabel32");
+        penurunanLabel.setText("jLabel32");
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel9.setText("Jenis Kelamin");
+        jLabel9.setText("Nama Usaha");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel6.setText("No. Urut Anggota Keluarga");
+        jLabel6.setText("Jabatan");
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel23.setText("Lapangan Pekerjaan dari usaha utama");
+        jLabel23.setText("Jumlah Pegawai Sebelum Covid");
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel27.setText("status kedudukan dalam pekerjaan utama");
+        jLabel27.setText("Jumlah Pegawai Saat Ini");
 
         jLabel28.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel28.setText("kepemilikan usaha");
+        jLabel28.setText("Status Operasi Perusahaan");
 
         jLabel29.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel29.setText("Lapangan usaha dari usaha utama");
+        jLabel29.setText("Besar Penuruan");
 
         jLabel30.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel30.setText("Jumlah usaha yang dimiliki");
+        jLabel30.setText("Kondisi Pendapatan Dibanding Sebelum Covid");
 
-        noUrutJLabel.setText("jLabel1");
+        jabatanLabel.setText("jLabel1");
 
-        namaJLabel.setText("jLabel2");
+        jkLabel.setText("jLabel2");
 
-        jenisKelaminJLabel.setText("jLabel3");
+        namaUsahaLabel.setText("jLabel3");
 
-        statusHubunganJLabel.setText("jLabel4");
+        provinsiLabel.setText("jLabel4");
 
-        umurJLabel.setText("jLabel5");
+        kotaLabel.setText("jLabel5");
 
         title2Label.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        title2Label.setText("No Urut Keluarga");
+        title2Label.setText("ID Perusahaan");
 
-        gangguanJLabel.setText("jLabel11");
+        produkLabel.setText("jLabel11");
 
-        ijazahJLabel.setText("jLabel12");
+        kategoriUsahaLabel.setText("jLabel12");
 
-        statusKerjaJLabel.setText("jLabel13");
+        omsetLabel.setText("jLabel13");
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel16.setText("Umur");
+        jLabel16.setText("Kota");
 
-        lapUsahaJLabel.setText("jLabel14");
+        pegawaiSebelumLabel.setText("jLabel14");
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel10.setText("Status Hubungan dengan kepala keluarga");
+        jLabel10.setText("Provinsi");
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel17.setText("Memiliki kesulitan/gangguan");
+        jLabel17.setText("Produk");
 
-        statusKedudukanJLabel.setText("jLabel25");
+        pegawaiSekarangLabel.setText("jLabel25");
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel19.setText("Status Pekerjaan");
+        jLabel19.setText("Omset");
 
-        kepemilikanUsahaJLabel.setText("jLabel26");
+        operasiLabel.setText("jLabel26");
 
-        jumlahUsahaJLabel.setText("jLabel31");
+        kondisiLabel.setText("jLabel31");
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel18.setText("Ijazah");
+        jLabel18.setText("Kategori Usaha");
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel7.setText("NIK");
+        jLabel7.setText("Umur");
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel20.setText("Nama");
+        jLabel20.setText("Jenis Kelamin");
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel21.setText("Jenis Kesulitan/gangguan");
+        jLabel21.setText("Produk Lain");
 
-        jenisGangguanJLabel.setText("jLabel1");
+        produkLainLabel.setText("jLabel1");
 
-        nikJLabel.setText("jLabel22");
+        umurLabel.setText("jLabel22");
+
+        jLabel31.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel31.setText("Besar Spesifik Penurunan");
+
+        jLabel32.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel32.setText("Besar Peningkatan");
+
+        jLabel33.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel33.setText("Besar Spesifik Peningkatan");
+
+        jLabel34.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel34.setText("Upaya Meningkatkan Usaha");
+
+        spesifikPenurunanLabel.setText("jLabel1");
+
+        peningkatanLabel.setText("jLabel2");
+
+        spesifikPeningkatanLabel.setText("jLabel3");
+
+        upayaLabel.setText("jLabel4");
+
+        idLabel.setText("jLabel5");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(idperLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(380, 380, 380))
+            .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 593, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(title2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(548, 548, 548))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel27)
-                            .addComponent(jLabel28)
-                            .addComponent(jLabel30)
-                            .addComponent(jLabel29))
-                        .addGap(95, 95, 95)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(statusKedudukanJLabel)
-                            .addComponent(kepemilikanUsahaJLabel)
-                            .addComponent(jumlahUsahaJLabel)
-                            .addComponent(lapUsahaUtamaJLabel)
-                            .addComponent(ijazahJLabel)
-                            .addComponent(statusKerjaJLabel)
-                            .addComponent(lapUsahaJLabel)
-                            .addComponent(jenisGangguanJLabel)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(98, 98, 98)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nikJLabel)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jenisKelaminJLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(statusHubunganJLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(umurJLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(gangguanJLabel))
-                            .addComponent(namaJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(noUrutJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(idperLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(380, 380, 380))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(98, 98, 98)
+                                        .addComponent(namaUsahaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addGap(18, 18, 18))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(88, 88, 88)))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jabatanLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jkLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(idLabel))
+                                        .addGap(78, 78, 78))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addGap(168, 168, 168))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(276, 276, 276)))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(kotaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(provinsiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(71, 71, 71))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(90, 90, 90)
+                                                .addComponent(umurLabel))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(90, 90, 90)
+                                                .addComponent(produkLabel))
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(kategoriUsahaLabel))
+                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGap(95, 95, 95)
+                                                    .addComponent(produkLainLabel))
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(jLabel27)
+                                                        .addComponent(jLabel28)
+                                                        .addComponent(jLabel30)
+                                                        .addComponent(jLabel29)
+                                                        .addComponent(jLabel31)
+                                                        .addComponent(jLabel32)
+                                                        .addComponent(jLabel33)
+                                                        .addComponent(jLabel34))
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(kondisiLabel)
+                                                        .addComponent(operasiLabel)
+                                                        .addComponent(pegawaiSekarangLabel)
+                                                        .addComponent(omsetLabel)
+                                                        .addComponent(penurunanLabel)
+                                                        .addComponent(spesifikPenurunanLabel)
+                                                        .addComponent(peningkatanLabel)
+                                                        .addComponent(spesifikPeningkatanLabel)
+                                                        .addComponent(upayaLabel))))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(95, 95, 95)
+                                                .addComponent(pegawaiSebelumLabel)))
+                                        .addGap(0, 0, Short.MAX_VALUE)))))
+                        .addGap(312, 312, 312))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -265,75 +334,91 @@ public class viewPanel extends javax.swing.JPanel {
                 .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(title2Label)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(title2Label)
+                        .addComponent(idLabel))
                     .addComponent(idperLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(noUrutJLabel))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(namaJLabel))
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nikJLabel))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jenisKelaminJLabel))
+                    .addComponent(jabatanLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jkLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(umurLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(namaUsahaLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(statusHubunganJLabel))
+                    .addComponent(provinsiLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(umurJLabel))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(kotaLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(gangguanJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(11, 11, 11)
+                    .addComponent(produkLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jenisGangguanJLabel))
+                    .addComponent(produkLainLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(kategoriUsahaLabel))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(omsetLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ijazahJLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(statusKerjaJLabel))
-                        .addGap(18, 18, 18)
-                        .addComponent(lapUsahaJLabel)
+                        .addComponent(pegawaiSebelumLabel)
                         .addGap(6, 6, 6))
                     .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel27)
-                    .addComponent(statusKedudukanJLabel))
-                .addGap(18, 18, 18)
+                    .addComponent(pegawaiSekarangLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel28)
-                    .addComponent(kepemilikanUsahaJLabel))
-                .addGap(18, 18, 18)
+                    .addComponent(operasiLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel30)
-                    .addComponent(jumlahUsahaJLabel))
+                    .addComponent(kondisiLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel29)
-                    .addComponent(lapUsahaUtamaJLabel))
-                .addGap(34, 34, 34)
+                    .addComponent(penurunanLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel31)
+                    .addComponent(spesifikPenurunanLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel32)
+                    .addComponent(peningkatanLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel33)
+                    .addComponent(spesifikPeningkatanLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel34)
+                    .addComponent(upayaLabel))
+                .addGap(21, 21, 21)
                 .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -345,9 +430,8 @@ public class viewPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
-    private javax.swing.JLabel gangguanJLabel;
+    private javax.swing.JLabel idLabel;
     private javax.swing.JLabel idperLabel;
-    private javax.swing.JLabel ijazahJLabel;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -360,23 +444,33 @@ public class viewPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel jenisGangguanJLabel;
-    private javax.swing.JLabel jenisKelaminJLabel;
-    private javax.swing.JLabel jumlahUsahaJLabel;
-    private javax.swing.JLabel kepemilikanUsahaJLabel;
-    private javax.swing.JLabel lapUsahaJLabel;
-    private javax.swing.JLabel lapUsahaUtamaJLabel;
-    private javax.swing.JLabel namaJLabel;
-    private javax.swing.JLabel nikJLabel;
-    private javax.swing.JLabel noUrutJLabel;
-    private javax.swing.JLabel statusHubunganJLabel;
-    private javax.swing.JLabel statusKedudukanJLabel;
-    private javax.swing.JLabel statusKerjaJLabel;
+    private javax.swing.JLabel jabatanLabel;
+    private javax.swing.JLabel jkLabel;
+    private javax.swing.JLabel kategoriUsahaLabel;
+    private javax.swing.JLabel kondisiLabel;
+    private javax.swing.JLabel kotaLabel;
+    private javax.swing.JLabel namaUsahaLabel;
+    private javax.swing.JLabel omsetLabel;
+    private javax.swing.JLabel operasiLabel;
+    private javax.swing.JLabel pegawaiSebelumLabel;
+    private javax.swing.JLabel pegawaiSekarangLabel;
+    private javax.swing.JLabel peningkatanLabel;
+    private javax.swing.JLabel penurunanLabel;
+    private javax.swing.JLabel produkLabel;
+    private javax.swing.JLabel produkLainLabel;
+    private javax.swing.JLabel provinsiLabel;
+    private javax.swing.JLabel spesifikPeningkatanLabel;
+    private javax.swing.JLabel spesifikPenurunanLabel;
     private javax.swing.JLabel title2Label;
     private javax.swing.JLabel titleLabel;
-    private javax.swing.JLabel umurJLabel;
+    private javax.swing.JLabel umurLabel;
+    private javax.swing.JLabel upayaLabel;
     // End of variables declaration//GEN-END:variables
 }
