@@ -24,19 +24,14 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
+          <Component id="jPanel1" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="405" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="507" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -45,7 +40,7 @@
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="97" green="54" red="4" type="rgb"/>
+          <Color blue="86" green="d8" red="f4" type="rgb"/>
         </Property>
       </Properties>
 
@@ -55,33 +50,37 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel3" min="-2" pref="361" max="-2" attributes="0"/>
                       <Component id="jLabel5" alignment="0" min="-2" pref="369" max="-2" attributes="0"/>
                       <Component id="jLabel6" min="-2" pref="369" max="-2" attributes="0"/>
                       <Component id="jLabel2" alignment="0" min="-2" pref="480" max="-2" attributes="0"/>
+                      <Component id="jLabel3" min="-2" pref="578" max="-2" attributes="0"/>
+                      <Component id="jLabel4" min="-2" pref="578" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="115" max="32767" attributes="0"/>
+                  <EmptySpace pref="582" max="32767" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="1" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              </Group>
               <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel5" min="-2" pref="17" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel6" min="-2" pref="17" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="7" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -96,7 +95,7 @@
               <Color blue="97" green="54" red="4" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resources/images/Untitled-2-01_1.png"/>
+              <Image iconType="3" name="/resources/images/home icon.png"/>
             </Property>
           </Properties>
         </Component>
@@ -106,7 +105,7 @@
               <Font name="Tahoma" size="14" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="f2" green="f2" red="f4" type="rgb"/>
+              <Color blue="97" green="54" red="4" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Di Sistem Entri Data Survei Dampak Covid-19 Terhadap Pelaku Usaha."/>
           </Properties>
@@ -114,12 +113,12 @@
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="36" style="1"/>
+              <Font name="Tahoma" size="18" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="f2" green="f2" red="f4" type="rgb"/>
+              <Color blue="97" green="54" red="4" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Selamat Datang!"/>
+            <Property name="text" type="java.lang.String" value="Tinjauan Dampak Covid-19 Terhadap Pelaku Usaha"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
@@ -128,7 +127,7 @@
               <Font name="Tahoma" size="14" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="f2" green="f2" red="f4" type="rgb"/>
+              <Color blue="97" green="54" red="4" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="1. Menginput data bisa dilakukan pada menu &quot;Entri Data&quot;"/>
           </Properties>
@@ -139,9 +138,20 @@
               <Font name="Tahoma" size="14" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="f2" green="f2" red="f4" type="rgb"/>
+              <Color blue="97" green="54" red="4" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="2. Untuk melihat data, masuk ke menu &quot;Lihat Data&quot;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel4">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="36" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="97" green="54" red="4" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Selamat Datang di TANGGUH!"/>
           </Properties>
         </Component>
       </SubComponents>

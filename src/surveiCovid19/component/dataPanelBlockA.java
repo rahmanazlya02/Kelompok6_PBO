@@ -46,10 +46,12 @@ public class dataPanelBlockA extends javax.swing.JPanel {
 
         titleLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        perusahaanTable = new javax.swing.JTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        respondenTable = new javax.swing.JTable();
+        blokATable = new javax.swing.JTable();
         exportButton = new javax.swing.JButton();
+        viewButton = new javax.swing.JButton();
+        searchTextField = new javax.swing.JTextField();
+        searchButton = new javax.swing.JButton();
+        refreshButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(245, 245, 245));
 
@@ -57,49 +59,68 @@ public class dataPanelBlockA extends javax.swing.JPanel {
         titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titleLabel.setText("Data Kuesioner Blok A");
 
-        perusahaanTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        perusahaanTable.setModel(new javax.swing.table.DefaultTableModel(
+        blokATable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        blokATable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Nama Perusahaan", "Provinsi", "Kabupaten/Kota", "Produk Utama", "Produk Lainnya", "Sektor Usaha", "Omset", "Jumlah Pegawai Sebelum Covid", "Jumlah Pegawai Saat Ini", "Kondisi Usaha"
+                "Kedudukan", "Jenis Kelamin", "Umur", "Nama Perusahaan", "Provinsi", "Kabupaten/Kota", "Produk Utama", "Produk Lainnya", "Sektor Usaha", "Omset", "Jumlah Pegawai Sebelum Covid", "Jumlah Pegawai Saat Ini", "Kondisi Usaha"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(perusahaanTable);
+        jScrollPane1.setViewportView(blokATable);
 
-        respondenTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Kedudukan", "Jenis Kelamin", "Umur"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane2.setViewportView(respondenTable);
-
-        exportButton.setBackground(new java.awt.Color(255, 153, 153));
-        exportButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        exportButton.setBackground(new java.awt.Color(81, 137, 198));
+        exportButton.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        exportButton.setForeground(new java.awt.Color(255, 255, 255));
         exportButton.setText("Export To Csv");
         exportButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exportButtonActionPerformed(evt);
+            }
+        });
+
+        viewButton.setBackground(new java.awt.Color(81, 137, 198));
+        viewButton.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        viewButton.setForeground(new java.awt.Color(255, 255, 255));
+        viewButton.setText("View Data");
+        viewButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewButtonActionPerformed(evt);
+            }
+        });
+
+        searchTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchTextFieldActionPerformed(evt);
+            }
+        });
+
+        searchButton.setBackground(new java.awt.Color(81, 137, 198));
+        searchButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        searchButton.setForeground(new java.awt.Color(255, 255, 255));
+        searchButton.setText("Cari");
+        searchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchButtonActionPerformed(evt);
+            }
+        });
+
+        refreshButton.setBackground(new java.awt.Color(81, 137, 198));
+        refreshButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        refreshButton.setForeground(new java.awt.Color(255, 255, 255));
+        refreshButton.setText("Refresh");
+        refreshButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                refreshButtonActionPerformed(evt);
             }
         });
 
@@ -111,24 +132,36 @@ public class dataPanelBlockA extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(exportButton)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 779, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2)))
-                .addContainerGap(464, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(exportButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(viewButton, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(searchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 931, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(refreshButton, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(74, 74, 74)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(searchButton, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(searchTextField)
+                    .addComponent(refreshButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(exportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(exportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -142,35 +175,20 @@ public class dataPanelBlockA extends javax.swing.JPanel {
         
         if (userSelection == JFileChooser.APPROVE_OPTION) {
             try (FileWriter fileWriter = new FileWriter(fileChooser.getSelectedFile() + ".csv")) {
-                DefaultTableModel perusahaanTableModel = (DefaultTableModel) perusahaanTable.getModel();
-                DefaultTableModel respondenTableModel = (DefaultTableModel) respondenTable.getModel();
-                
-                // Write Perusahaan Table Header
-                for (int i = 0; i < perusahaanTableModel.getColumnCount(); i++) {
-                    fileWriter.write(perusahaanTableModel.getColumnName(i) + ",");
-                }
-                fileWriter.write("\n");
+                DefaultTableModel blokATableModel = (DefaultTableModel) blokATable.getModel();
                 
                 // Write Perusahaan Table Data
-                for (int i = 0; i < perusahaanTableModel.getRowCount(); i++) {
-                    for (int j = 0; j < perusahaanTableModel.getColumnCount(); j++) {
-                        fileWriter.write(perusahaanTableModel.getValueAt(i, j).toString() + ",");
+                for (int i = 0; i < blokATableModel.getRowCount(); i++) {
+                    for (int j = 0; j < blokATableModel.getColumnCount(); j++) {
+                        fileWriter.write(blokATableModel.getValueAt(i, j).toString() + ",");
                     }
                     fileWriter.write("\n");
                 }
                 
-                fileWriter.write("\n"); // New line between tables
-                
-                // Write Responden Table Header
-                for (int i = 0; i < respondenTableModel.getColumnCount(); i++) {
-                    fileWriter.write(respondenTableModel.getColumnName(i) + ",");
-                }
-                fileWriter.write("\n");
-                
                 // Write Responden Table Data
-                for (int i = 0; i < respondenTableModel.getRowCount(); i++) {
-                    for (int j = 0; j < respondenTableModel.getColumnCount(); j++) {
-                        fileWriter.write(respondenTableModel.getValueAt(i, j).toString() + ",");
+                for (int i = 0; i < blokATableModel.getRowCount(); i++) {
+                    for (int j = 0; j < blokATableModel.getColumnCount(); j++) {
+                        fileWriter.write(blokATableModel.getValueAt(i, j).toString() + ",");
                     }
                     fileWriter.write("\n");
                 }
@@ -183,17 +201,38 @@ public class dataPanelBlockA extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_exportButtonActionPerformed
 
-    private void loadTableData() {
-        DefaultTableModel respondenTableModel = (DefaultTableModel) respondenTable.getModel();
-        DefaultTableModel perusahaanTableModel = (DefaultTableModel) perusahaanTable.getModel();
+    private void viewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewButtonActionPerformed
 
-        // Refresh tabel
-        while (respondenTableModel.getRowCount() > 0) {
-            respondenTableModel.removeRow(0);
+    private void searchTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchTextFieldActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_searchTextFieldActionPerformed
+
+    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
+        // TODO add your handling code here:
+        // Get the search text from the searchTextField
+        String searchText = searchTextField.getText().trim();
+
+        // Check if the search text is empty
+        if (searchText.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Masukkan kata kunci pencarian.", "Peringatan", JOptionPane.WARNING_MESSAGE);
+            return;
         }
+        // Perform the search and update the table
+        //searchAndUpdateTable(searchText);
+    }//GEN-LAST:event_searchButtonActionPerformed
+
+    private void refreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_refreshButtonActionPerformed
+
+    private void loadTableData() {
+        DefaultTableModel blokATableModel = (DefaultTableModel) blokATable.getModel();
         
-        while (perusahaanTableModel.getRowCount() > 0) {
-            perusahaanTableModel.removeRow(0);
+        while (blokATableModel.getRowCount() > 0) {
+            blokATableModel.removeRow(0);
         }
 
         try {
@@ -229,11 +268,13 @@ public class dataPanelBlockA extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable blokATable;
     private javax.swing.JButton exportButton;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable perusahaanTable;
-    private javax.swing.JTable respondenTable;
+    private javax.swing.JButton refreshButton;
+    private javax.swing.JButton searchButton;
+    private javax.swing.JTextField searchTextField;
     private javax.swing.JLabel titleLabel;
+    private javax.swing.JButton viewButton;
     // End of variables declaration//GEN-END:variables
 }

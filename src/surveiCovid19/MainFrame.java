@@ -36,6 +36,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     CardLayout cardLayout;
     public MainFrame() {
+        setTitle("TANGGUH");
         initComponents();
         contentScrollPane.setViewportView(new HomePanel());
     }
@@ -72,7 +73,7 @@ public class MainFrame extends javax.swing.JFrame {
         contentScrollPane.setMaximumSize(new java.awt.Dimension(936, 621));
         contentScrollPane.setViewportView(homePanel1);
 
-        navigationPanel.setBackground(new java.awt.Color(81, 137, 198));
+        navigationPanel.setBackground(new java.awt.Color(4, 84, 151));
         navigationPanel.setMaximumSize(new java.awt.Dimension(200, 32767));
         navigationPanel.setMinimumSize(new java.awt.Dimension(200, 0));
         navigationPanel.setPreferredSize(new java.awt.Dimension(200, 648));
@@ -327,13 +328,13 @@ public class MainFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(navigationPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(contentScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 972, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(contentScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1234, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(navigationPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(contentScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 648, Short.MAX_VALUE)
+            .addComponent(navigationPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
+            .addComponent(contentScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
         );
 
         pack();
@@ -403,10 +404,12 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void lihatDataTitleMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lihatDataTitleMouseEntered
         // TODO add your handling code here:
+
     }//GEN-LAST:event_lihatDataTitleMouseEntered
 
     private void lihatDataTitleMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lihatDataTitleMouseExited
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_lihatDataTitleMouseExited
 
     private void lihatDataTitleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatDataTitleActionPerformed
@@ -419,10 +422,12 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void inputDataTitleMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputDataTitleMouseEntered
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_inputDataTitleMouseEntered
 
     private void inputDataTitleMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputDataTitleMouseExited
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_inputDataTitleMouseExited
 
     private void inputDataTitleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputDataTitleActionPerformed
@@ -432,18 +437,22 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void homeButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeButtonMouseClicked
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_homeButtonMouseClicked
 
     private void homeButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeButtonMouseEntered
         // TODO add your handling code here:
+        homeButton.setContentAreaFilled(true);
     }//GEN-LAST:event_homeButtonMouseEntered
 
     private void homeButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeButtonMouseExited
         // TODO add your handling code here:
+        homeButton.setContentAreaFilled(false);
     }//GEN-LAST:event_homeButtonMouseExited
 
     private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeButtonActionPerformed
         // TODO add your handling code here:
+        contentScrollPane.setViewportView(new HomePanel());
     }//GEN-LAST:event_homeButtonActionPerformed
 
     private void inputDataBlokCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputDataBlokCActionPerformed
@@ -453,14 +462,17 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void inputDataBlokCMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputDataBlokCMouseExited
         // TODO add your handling code here:
+        inputDataBlokC.setContentAreaFilled(false);
     }//GEN-LAST:event_inputDataBlokCMouseExited
 
     private void inputDataBlokCMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputDataBlokCMouseEntered
         // TODO add your handling code here:
+        inputDataBlokC.setContentAreaFilled(true);
     }//GEN-LAST:event_inputDataBlokCMouseEntered
 
     private void inputDataBlokCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputDataBlokCMouseClicked
         // TODO add your handling code here:
+        inputDataBlokC.setContentAreaFilled(true);
     }//GEN-LAST:event_inputDataBlokCMouseClicked
 
     private void lihatDataBlokCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatDataBlokCActionPerformed
@@ -470,10 +482,12 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void lihatDataBlokCMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lihatDataBlokCMouseExited
         // TODO add your handling code here:
+        lihatDataBlokC.setContentAreaFilled(false);
     }//GEN-LAST:event_lihatDataBlokCMouseExited
 
     private void lihatDataBlokCMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lihatDataBlokCMouseEntered
         // TODO add your handling code here:
+        lihatDataBlokC.setContentAreaFilled(true);
     }//GEN-LAST:event_lihatDataBlokCMouseEntered
 
     

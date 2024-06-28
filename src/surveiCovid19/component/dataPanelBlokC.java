@@ -46,31 +46,50 @@ public class dataPanelBlokC extends javax.swing.JPanel {
         titleLabel = new javax.swing.JLabel();
         searchTextField = new javax.swing.JTextField();
         searchButton = new javax.swing.JButton();
-        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
-        jScrollPane2 = new javax.swing.JScrollPane();
+        eksportButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         finansialTable = new javax.swing.JTable();
-        eksportButton = new javax.swing.JButton();
+        viewButton = new javax.swing.JButton();
+        refreshButton = new javax.swing.JButton();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         titleLabel.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titleLabel.setText("Data Kuesioner Blok C");
+        add(titleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, 590, 69));
 
+        searchTextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         searchTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchTextFieldActionPerformed(evt);
             }
         });
+        add(searchTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 920, 30));
 
-        searchButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        searchButton.setBackground(new java.awt.Color(81, 137, 198));
+        searchButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        searchButton.setForeground(new java.awt.Color(255, 255, 255));
         searchButton.setText("Cari");
         searchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchButtonActionPerformed(evt);
             }
         });
+        add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 120, 100, 30));
 
-        finansialTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        eksportButton.setBackground(new java.awt.Color(81, 137, 198));
+        eksportButton.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        eksportButton.setForeground(new java.awt.Color(255, 255, 255));
+        eksportButton.setText("Export To Csv");
+        eksportButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eksportButtonActionPerformed(evt);
+            }
+        });
+        add(eksportButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 650, -1, 34));
+
+        finansialTable.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         finansialTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -94,59 +113,32 @@ public class dataPanelBlokC extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        finansialTable.setRowHeight(30);
         jScrollPane1.setViewportView(finansialTable);
 
-        jScrollPane2.setViewportView(jScrollPane1);
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 1150, 460));
 
-        eksportButton.setBackground(new java.awt.Color(255, 153, 153));
-        eksportButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        eksportButton.setText("Export To Csv");
-        eksportButton.addActionListener(new java.awt.event.ActionListener() {
+        viewButton.setBackground(new java.awt.Color(81, 137, 198));
+        viewButton.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        viewButton.setForeground(new java.awt.Color(255, 255, 255));
+        viewButton.setText("View Data");
+        viewButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eksportButtonActionPerformed(evt);
+                viewButtonActionPerformed(evt);
             }
         });
+        add(viewButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 650, 130, 34));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(titleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 983, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(eksportButton)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(searchTextField)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 937, Short.MAX_VALUE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(searchTextField)
-                    .addComponent(searchButton, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(eksportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(238, 238, 238)
-                .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        refreshButton.setBackground(new java.awt.Color(81, 137, 198));
+        refreshButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        refreshButton.setForeground(new java.awt.Color(255, 255, 255));
+        refreshButton.setText("Refresh");
+        refreshButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                refreshButtonActionPerformed(evt);
+            }
+        });
+        add(refreshButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 120, 100, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
@@ -236,6 +228,14 @@ public class dataPanelBlokC extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_eksportButtonActionPerformed
 
+    private void viewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewButtonActionPerformed
+
+    private void refreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_refreshButtonActionPerformed
+
     private void loadTableData(){ 
        DefaultTableModel dtm = (DefaultTableModel) finansialTable.getModel();
        //DefaultTableModel dtm1 = (DefaultTableModel) dataUmurLebihLima.getModel();
@@ -263,12 +263,12 @@ public class dataPanelBlokC extends javax.swing.JPanel {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton eksportButton;
-    private javax.swing.Box.Filler filler1;
     private javax.swing.JTable finansialTable;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton refreshButton;
     private javax.swing.JButton searchButton;
     private javax.swing.JTextField searchTextField;
     private javax.swing.JLabel titleLabel;
+    private javax.swing.JButton viewButton;
     // End of variables declaration//GEN-END:variables
 }
