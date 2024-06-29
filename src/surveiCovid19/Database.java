@@ -74,6 +74,23 @@ public class Database implements Serializable{
         }
     }
     
+    public void deleteBlokA(int idPerusahaan) throws SQLException {
+        Connection conn = getConnection();
+        try {
+            String sql = "DELETE FROM bloka WHERE id_perusahaan = ?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, idPerusahaan);
+            pstmt.executeUpdate();
+        } catch (SQLException ex) {
+            throw ex;
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+    }
+
+    
     public void insertBlokC(blokC blokC)throws SQLException{
         Connection conn = getConnection();
         try{
@@ -97,6 +114,47 @@ public class Database implements Serializable{
             }
         }
     }
+    
+    public void updateBlokC(blokC blokC) throws SQLException {
+        Connection conn = getConnection();
+        try {
+            String sql = "UPDATE blokc SET income_Sblm_Covid = ?, penurunan = ?, penurunan_lain = ?, peningkatan = ?, peningkatan_lain = ?, upaya_peningkatan = ? WHERE id_perusahaan = ?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+
+            pstmt.setString(1, blokC.getIncomeSblmCovid());
+            pstmt.setString(2, blokC.getPenurunan());
+            pstmt.setString(3, blokC.getPenurunanLain());
+            pstmt.setString(4, blokC.getPeningkatan());
+            pstmt.setString(5, blokC.getPeningkatanLain());
+            pstmt.setString(6, blokC.getUpayaPeningkatan());
+            pstmt.setInt(7, blokC.getIdPerusahaan());
+
+            pstmt.executeUpdate();
+        } catch (SQLException ex) {
+            throw ex;
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+    }
+
+    public void deleteBlokC(int idPerusahaan) throws SQLException {
+        Connection conn = getConnection();
+        try {
+            String sql = "DELETE FROM blokc WHERE id_perusahaan = ?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, idPerusahaan);
+            pstmt.executeUpdate();
+        } catch (SQLException ex) {
+            throw ex;
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+    }
+
     
     public List<blokA>  selectBlokA() throws SQLException{
         List<blokA> blokAlist = new ArrayList<>();

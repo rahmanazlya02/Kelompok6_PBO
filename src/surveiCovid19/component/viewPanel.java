@@ -8,6 +8,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JScrollPane;
 import surveiCovid19.Database;
 
@@ -23,7 +25,7 @@ public class viewPanel extends javax.swing.JPanel {
      */
     public viewPanel(JScrollPane contentScrollPane, int idPerusahaan) throws SQLException {
         this.contentScrollPane = contentScrollPane;
-        idPerusahaan = idPerusahaan;
+        this.idPerusahaan = idPerusahaan; // Corrected assignment
         initComponents();
         insertInfo();
     }
@@ -41,8 +43,10 @@ public class viewPanel extends javax.swing.JPanel {
 
             try (ResultSet rs = pst.executeQuery();
                  ResultSet rs2 = pst2.executeQuery()) {
-
+                
                 if (rs.next()) {
+                    System.out.println("halo");
+                    System.out.println(idPerusahaan);
                     idLabel.setText(String.valueOf(idPerusahaan));
                     jabatanLabel.setText(rs.getString("jabatan"));
                     jkLabel.setText(rs.getString("jenis_kelamin"));
@@ -125,6 +129,7 @@ public class viewPanel extends javax.swing.JPanel {
         spesifikPeningkatanLabel = new javax.swing.JLabel();
         upayaLabel = new javax.swing.JLabel();
         idLabel = new javax.swing.JLabel();
+        edit_button = new javax.swing.JButton();
 
         titleLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         titleLabel.setText("Data Kuesioner Survei Dampak Covid 19 Terhadap Pelaku Usaha");
@@ -237,6 +242,13 @@ public class viewPanel extends javax.swing.JPanel {
 
         idLabel.setText("jLabel5");
 
+        edit_button.setText("Edit");
+        edit_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edit_buttonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -244,6 +256,8 @@ public class viewPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(edit_button)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
@@ -424,8 +438,10 @@ public class viewPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel34)
                     .addComponent(upayaLabel))
-                .addGap(21, 21, 21)
-                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(edit_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(backButton, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -435,9 +451,19 @@ public class viewPanel extends javax.swing.JPanel {
         this.contentScrollPane.setViewportView(new dataPanelBlokA(contentScrollPane));
     }//GEN-LAST:event_backButtonActionPerformed
 
+    private void edit_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_buttonActionPerformed
+        try {
+            // TODO add your handling code here:
+            this.contentScrollPane.setViewportView(new editDataBlokA(idPerusahaan,contentScrollPane));
+        } catch (SQLException ex) {
+            Logger.getLogger(viewPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_edit_buttonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
+    private javax.swing.JButton edit_button;
     private javax.swing.JLabel idLabel;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel16;
