@@ -17,51 +17,63 @@ import surveiCovid19.Database;
  */
 public class viewPanel extends javax.swing.JPanel {
     private final JScrollPane contentScrollPane;
-    private String idPer;
+    private int idPerusahaan;
     /**
      * Creates new form viewPanel
      */
-    public viewPanel(JScrollPane contentScrollPane, String id) throws SQLException {
+    public viewPanel(JScrollPane contentScrollPane, int idPerusahaan) throws SQLException {
         this.contentScrollPane = contentScrollPane;
-        idPer = id;
+        idPerusahaan = idPerusahaan;
         initComponents();
         insertInfo();
     }
 
-    public void insertInfo() throws SQLException{
-        String sql = "select * from anggotakeluarga where noUrut = " +idPer;
-        String sql2 = "select * from umurlebihlima where noUrut = " +idPer;
-        Connection conn = Database.getInstance().getConnection();
-        try{
-            PreparedStatement pst2 = conn.prepareStatement(sql2);
-            PreparedStatement pst = conn.prepareStatement(sql);
-            ResultSet rs = pst.executeQuery();
-            ResultSet rs2 = pst2.executeQuery();
-            while(rs.next()){
-                idperLabel.setText(idPer);
-                jabatanLabel.setText(rs.getString("noUrut"));
-                jkLabel.setText(rs.getString("nama"));
-                umurLabel.setText(rs.getString("nik"));
-                namaUsahaLabel.setText(rs.getString("jenisKelamin"));
-                provinsiLabel.setText(rs.getString("statusHubungan"));
-                kotaLabel.setText(rs.getString("umur"));
+    public void insertInfo() throws SQLException {
+        String sql = "SELECT * FROM bloka WHERE id_perusahaan = ?";
+        String sql2 = "SELECT * FROM blokc WHERE id_perusahaan = ?";
+
+        try (Connection conn = Database.getInstance().getConnection();
+             PreparedStatement pst = conn.prepareStatement(sql);
+             PreparedStatement pst2 = conn.prepareStatement(sql2)) {
+
+            pst.setInt(1, idPerusahaan);
+            pst2.setInt(1, idPerusahaan);
+
+            try (ResultSet rs = pst.executeQuery();
+                 ResultSet rs2 = pst2.executeQuery()) {
+
+                if (rs.next()) {
+                    idLabel.setText(String.valueOf(idPerusahaan));
+                    jabatanLabel.setText(rs.getString("jabatan"));
+                    jkLabel.setText(rs.getString("jenis_kelamin"));
+                    umurLabel.setText(rs.getString("umur"));
+                    namaUsahaLabel.setText(rs.getString("nama_usaha"));
+                    provinsiLabel.setText(rs.getString("provinsi"));
+                    kotaLabel.setText(rs.getString("kota"));
+                    produkLabel.setText(rs.getString("produk"));
+                    produkLainLabel.setText(rs.getString("produk_lain"));
+                    kategoriUsahaLabel.setText(rs.getString("kat_usaha"));
+                    omsetLabel.setText(rs.getString("omset"));
+                    pegawaiSebelumLabel.setText(rs.getString("jml_Pegawai_Sblm"));
+                    pegawaiSekarangLabel.setText(rs.getString("jml_Pegawai_Skrg"));
+                    operasiLabel.setText(rs.getString("operasi"));
+                }
+
+                if (rs2.next()) {
+                    kondisiLabel.setText(rs2.getString("income_Sblm_Covid"));
+                    penurunanLabel.setText(rs2.getString("penurunan"));
+                    spesifikPenurunanLabel.setText(rs2.getString("penurunan_lain"));
+                    peningkatanLabel.setText(rs2.getString("peningkatan"));
+                    spesifikPeningkatanLabel.setText(rs2.getString("peningkatan_lain"));
+                    upayaLabel.setText(rs2.getString("upaya_peningkatan"));
+                }
             }
-            while(rs2.next()){
-                produkLabel.setText(rs2.getString("gangguan"));
-                produkLainLabel.setText(rs2.getString("jenisGangguan"));
-                kategoriUsahaLabel.setText(rs2.getString("ijazah"));
-                omsetLabel.setText(rs2.getString("statusKerja"));
-                pegawaiSebelumLabel.setText(rs2.getString("lapUsaha"));
-                pegawaiSekarangLabel.setText(rs2.getString("statusKedudukan"));
-                operasiLabel.setText(rs2.getString("kepemilikanUsaha"));
-                kondisiLabel.setText(rs2.getString("jumlahUsaha"));
-                penurunanLabel.setText(rs2.getString("lapUsahaUtama"));
-            }
-        }catch(SQLException e){
+        } catch (SQLException e) {
             throw e;
         }
-        
     }
+
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -88,7 +100,6 @@ public class viewPanel extends javax.swing.JPanel {
         kotaLabel = new javax.swing.JLabel();
         title2Label = new javax.swing.JLabel();
         produkLabel = new javax.swing.JLabel();
-        idperLabel = new javax.swing.JLabel();
         kategoriUsahaLabel = new javax.swing.JLabel();
         omsetLabel = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -232,12 +243,8 @@ public class viewPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(idperLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(380, 380, 380))
+                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -257,19 +264,6 @@ public class viewPanel extends javax.swing.JPanel {
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addGap(18, 18, 18))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(88, 88, 88)))
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jabatanLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jkLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(idLabel))
-                                        .addGap(78, 78, 78))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
                                                 .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addGap(168, 168, 168))
                                             .addGroup(layout.createSequentialGroup()
@@ -281,10 +275,6 @@ public class viewPanel extends javax.swing.JPanel {
                                         .addGap(71, 71, 71))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(90, 90, 90)
-                                                .addComponent(umurLabel))
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(90, 90, 90)
@@ -324,7 +314,25 @@ public class viewPanel extends javax.swing.JPanel {
                                                 .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(95, 95, 95)
                                                 .addComponent(pegawaiSebelumLabel)))
-                                        .addGap(0, 0, Short.MAX_VALUE)))))
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addGap(18, 18, 18))
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGap(88, 88, 88)))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(97, 97, 97)))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(umurLabel)
+                                            .addComponent(jkLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jabatanLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(idLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(49, 49, 49)))))
                         .addGap(312, 312, 312))))
         );
         layout.setVerticalGroup(
@@ -334,10 +342,10 @@ public class viewPanel extends javax.swing.JPanel {
                 .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(title2Label)
-                        .addComponent(idLabel))
-                    .addComponent(idperLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(title2Label)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(idLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -431,7 +439,6 @@ public class viewPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
     private javax.swing.JLabel idLabel;
-    private javax.swing.JLabel idperLabel;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;

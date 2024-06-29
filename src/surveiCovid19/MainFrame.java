@@ -361,7 +361,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_logoutButtonMouseEntered
 
     private void lihatDataBlokAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatDataBlokAActionPerformed
-        // TODO add your handling code here:
+    // TODO add your handling code here:
         contentScrollPane.setViewportView(new dataPanelBlokA(contentScrollPane));
     }//GEN-LAST:event_lihatDataBlokAActionPerformed
 

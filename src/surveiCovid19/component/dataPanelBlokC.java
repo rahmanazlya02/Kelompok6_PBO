@@ -232,6 +232,24 @@ public class dataPanelBlokC extends javax.swing.JPanel {
 
     private void viewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewButtonActionPerformed
         // TODO add your handling code here:
+             // Get the selected row index
+    int selectedRowIndex = blokCtable.getSelectedRow();
+    
+    // Check if a row is selected
+    if (selectedRowIndex != -1) {
+        // Get the ID of the selected perusahaan
+        int idPerusahaan = (int) blokCtable.getValueAt(selectedRowIndex, 0);
+        
+     try {
+            // Create the viewPanel with the necessary parameters and set it to the contentScrollPane
+            contentScrollPane.setViewportView(new viewPanel(contentScrollPane, idPerusahaan));
+        } catch (SQLException ex) {
+            Logger.getLogger(dataPanelBlokA.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    } else {
+        // Show a message if no row is selected
+        JOptionPane.showMessageDialog(this, "Pilih baris yang ingin dilihat.", "Peringatan", JOptionPane.WARNING_MESSAGE);
+    }
     }//GEN-LAST:event_viewButtonActionPerformed
 
     private void refreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshButtonActionPerformed
