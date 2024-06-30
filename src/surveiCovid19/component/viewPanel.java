@@ -45,8 +45,6 @@ public class viewPanel extends javax.swing.JPanel {
                  ResultSet rs2 = pst2.executeQuery()) {
                 
                 if (rs.next()) {
-                    System.out.println("halo");
-                    System.out.println(idPerusahaan);
                     idLabel.setText(String.valueOf(idPerusahaan));
                     jabatanLabel.setText(rs.getString("jabatan"));
                     jkLabel.setText(rs.getString("jenis_kelamin"));
