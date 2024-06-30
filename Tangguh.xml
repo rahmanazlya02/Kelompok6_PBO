@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>D:\Semester 4\PBO\ProjectKelompok\Kelompok6_PBO\Kelompok6PBO.jar</jar>
+  <outfile>D:\Semester 4\PBO\ProjectKelompok\Kelompok6_PBO\Tangguh.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl></downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon>C:\Users\M Zayan Hafizh H\Downloads\logoTangguh.ico</icon>
+  <classPath>
+    <mainClass>surveiCovid19.LoginFrame</mainClass>
+    <cp>lib/AbsoluteLayout.jar</cp>
+    <cp>lib/AbsoluteLayout.jar</cp>
+    <cp>lib/mysql-connector-j-8.0.32.jar</cp>
+  </classPath>
+  <jre>
+    <path>%JAVA_HOME%;%PATH%</path>
+    <requiresJdk>false</requiresJdk>
+    <requires64Bit>false</requires64Bit>
+    <minVersion></minVersion>
+    <maxVersion></maxVersion>
+  </jre>
+</launch4jConfig>
