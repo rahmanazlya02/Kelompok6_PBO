@@ -120,7 +120,6 @@ public class editDataBlokA extends javax.swing.JPanel {
         jLabel13 = new javax.swing.JLabel();
         pegawai = new javax.swing.JTextField();
         kondisi = new javax.swing.JComboBox<>();
-        kirimButton = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         idPerusahaan_txt = new javax.swing.JTextField();
         hapus = new javax.swing.JButton();
@@ -232,14 +231,6 @@ public class editDataBlokA extends javax.swing.JPanel {
         kondisi.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         kondisi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masih beroperasi seperti biasa", "Beroperasi dengan penerapan WFH (remote atau teleworking ) untuk SEBAGIAN pegawai", "Beroperasi dengan penerapan WFH (remote atau teleworking ) untuk SELURUH pegawai", "Beroperasi dengan pengurangan kapasitas (jam kerja, mesin dan tenaga kerja)", "Beroperasi; bahkan melebihi kapasitas sebelum Covid-19", "Berhenti beroperasi" }));
 
-        kirimButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        kirimButton.setText("KIRIM");
-        kirimButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kirimButtonActionPerformed(evt);
-            }
-        });
-
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel14.setText("ID Perusahaan");
 
@@ -249,6 +240,9 @@ public class editDataBlokA extends javax.swing.JPanel {
             }
         });
 
+        hapus.setBackground(new java.awt.Color(81, 137, 198));
+        hapus.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        hapus.setForeground(new java.awt.Color(255, 255, 255));
         hapus.setText("Hapus");
         hapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -256,6 +250,9 @@ public class editDataBlokA extends javax.swing.JPanel {
             }
         });
 
+        editBlokC.setBackground(new java.awt.Color(81, 137, 198));
+        editBlokC.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        editBlokC.setForeground(new java.awt.Color(255, 255, 255));
         editBlokC.setText("Edit Blok C");
         editBlokC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -271,10 +268,8 @@ public class editDataBlokA extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(hapus, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(167, 167, 167)
-                        .addComponent(editBlokC, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(kirimButton, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(editBlokC, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9)
@@ -371,12 +366,11 @@ public class editDataBlokA extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(kondisi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(kirimButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-                    .addComponent(editBlokC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(hapus, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addGap(28, 28, 28)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(editBlokC, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(hapus, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 33, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pnlEntryLayout = new javax.swing.GroupLayout(pnlEntry);
@@ -421,35 +415,6 @@ public class editDataBlokA extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void kirimButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kirimButtonActionPerformed
-        // TODO add your handling code here:
-        blokA blokA = new blokA();
-        blokA.setIdPerusahaan(Integer.parseInt(idPerusahaan_txt.getText()));
-        blokA.setJabatan((String) jabatanResponden.getSelectedItem());
-        blokA.setJenisKelamin((String) jenisKelamin.getSelectedItem());
-        blokA.setUmur(Integer.parseInt(usiaResponden.getText()));
-        blokA.setNamaUsaha(namaUsaha.getText());
-        blokA.setProvinsi(kodeProv.getText());
-        blokA.setKota(kodeKab.getText());
-        blokA.setProduk(produkUtama.getText());
-        blokA.setProdukLain(produkLain.getText());
-        blokA.setKatUsaha((String) sektor.getSelectedItem());
-        blokA.setOmset(omset.getText());
-        blokA.setJmlPegawaiSblm(Integer.parseInt(pegawai.getText()));
-        blokA.setJmlPegawaiSkrg(Integer.parseInt(pegawai.getText()));
-        blokA.setOperasi((String) kondisi.getSelectedItem());
-
-        try {
-            Database.getInstance().insertBlokA(blokA);
-            clearForm();
-            JOptionPane.showMessageDialog(this, "Data Berhasil Tersimpan");
-        } catch (SQLException ex) {
-            System.err.println(ex);
-            JOptionPane.showMessageDialog(this, "Lengkapi Semua Data", "Data Gagal Tersimpan", JOptionPane.ERROR_MESSAGE);
-
-        }
-    }//GEN-LAST:event_kirimButtonActionPerformed
 
     private void kodeKabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kodeKabActionPerformed
         // TODO add your handling code here:
@@ -532,7 +497,6 @@ public class editDataBlokA extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JComboBox<String> jabatanResponden;
     private javax.swing.JComboBox<String> jenisKelamin;
-    private javax.swing.JButton kirimButton;
     private javax.swing.JTextField kodeKab;
     private javax.swing.JTextField kodeProv;
     private javax.swing.JComboBox<String> kondisi;

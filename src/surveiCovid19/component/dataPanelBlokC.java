@@ -49,8 +49,9 @@ public class dataPanelBlokC extends javax.swing.JPanel {
         eksportButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         blokCtable = new javax.swing.JTable();
-        viewButton = new javax.swing.JButton();
+        editButton = new javax.swing.JButton();
         refreshButton = new javax.swing.JButton();
+        viewButton1 = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -118,16 +119,16 @@ public class dataPanelBlokC extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 1150, 460));
 
-        viewButton.setBackground(new java.awt.Color(81, 137, 198));
-        viewButton.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        viewButton.setForeground(new java.awt.Color(255, 255, 255));
-        viewButton.setText("View Data");
-        viewButton.addActionListener(new java.awt.event.ActionListener() {
+        editButton.setBackground(new java.awt.Color(81, 137, 198));
+        editButton.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        editButton.setForeground(new java.awt.Color(255, 255, 255));
+        editButton.setText("Edit Data");
+        editButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewButtonActionPerformed(evt);
+                editButtonActionPerformed(evt);
             }
         });
-        add(viewButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 680, 130, 34));
+        add(editButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 680, 130, 34));
 
         refreshButton.setBackground(new java.awt.Color(81, 137, 198));
         refreshButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -139,6 +140,17 @@ public class dataPanelBlokC extends javax.swing.JPanel {
             }
         });
         add(refreshButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 130, 100, 30));
+
+        viewButton1.setBackground(new java.awt.Color(81, 137, 198));
+        viewButton1.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        viewButton1.setForeground(new java.awt.Color(255, 255, 255));
+        viewButton1.setText("View Data");
+        viewButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewButton1ActionPerformed(evt);
+            }
+        });
+        add(viewButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 680, 130, 34));
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
@@ -230,7 +242,7 @@ public class dataPanelBlokC extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_eksportButtonActionPerformed
 
-    private void viewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewButtonActionPerformed
+    private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
         // TODO add your handling code here:
              // Get the selected row index
     int selectedRowIndex = blokCtable.getSelectedRow();
@@ -250,12 +262,34 @@ public class dataPanelBlokC extends javax.swing.JPanel {
         // Show a message if no row is selected
         JOptionPane.showMessageDialog(this, "Pilih baris yang ingin dilihat.", "Peringatan", JOptionPane.WARNING_MESSAGE);
     }
-    }//GEN-LAST:event_viewButtonActionPerformed
+    }//GEN-LAST:event_editButtonActionPerformed
 
     private void refreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshButtonActionPerformed
         // TODO add your handling code here:
         loadTableData();
     }//GEN-LAST:event_refreshButtonActionPerformed
+
+    private void viewButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewButton1ActionPerformed
+        // TODO add your handling code here:
+             // Get the selected row index
+    int selectedRowIndex = blokCtable.getSelectedRow();
+    
+    // Check if a row is selected
+    if (selectedRowIndex != -1) {
+        // Get the ID of the selected perusahaan
+        int idPerusahaan = (int) blokCtable.getValueAt(selectedRowIndex, 0);
+        
+     try {
+            // Create the viewPanel with the necessary parameters and set it to the contentScrollPane
+            contentScrollPane.setViewportView(new viewPanel(contentScrollPane, idPerusahaan));
+        } catch (SQLException ex) {
+            Logger.getLogger(dataPanelBlokA.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    } else {
+        // Show a message if no row is selected
+        JOptionPane.showMessageDialog(this, "Pilih baris yang ingin dilihat.", "Peringatan", JOptionPane.WARNING_MESSAGE);
+    }
+    }//GEN-LAST:event_viewButton1ActionPerformed
 
     private void loadTableData(){ 
        DefaultTableModel dtm = (DefaultTableModel) blokCtable.getModel();
@@ -292,12 +326,13 @@ public class dataPanelBlokC extends javax.swing.JPanel {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable blokCtable;
+    private javax.swing.JButton editButton;
     private javax.swing.JButton eksportButton;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton refreshButton;
     private javax.swing.JButton searchButton;
     private javax.swing.JTextField searchTextField;
     private javax.swing.JLabel titleLabel;
-    private javax.swing.JButton viewButton;
+    private javax.swing.JButton viewButton1;
     // End of variables declaration//GEN-END:variables
 }

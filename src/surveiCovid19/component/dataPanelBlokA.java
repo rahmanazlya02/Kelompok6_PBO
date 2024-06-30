@@ -56,6 +56,7 @@ public class dataPanelBlokA extends javax.swing.JPanel {
         searchTextField = new javax.swing.JTextField();
         searchButton = new javax.swing.JButton();
         refreshButton = new javax.swing.JButton();
+        editButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(245, 245, 245));
 
@@ -129,6 +130,16 @@ public class dataPanelBlokA extends javax.swing.JPanel {
             }
         });
 
+        editButton.setBackground(new java.awt.Color(81, 137, 198));
+        editButton.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        editButton.setForeground(new java.awt.Color(255, 255, 255));
+        editButton.setText("Edit Data");
+        editButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -140,7 +151,9 @@ public class dataPanelBlokA extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(exportButton)
                         .addGap(18, 18, 18)
-                        .addComponent(viewButton, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(viewButton, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(searchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 931, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -165,7 +178,8 @@ public class dataPanelBlokA extends javax.swing.JPanel {
                 .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(exportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(viewButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(viewButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(109, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -292,6 +306,10 @@ public class dataPanelBlokA extends javax.swing.JPanel {
         loadTableData();
     }//GEN-LAST:event_refreshButtonActionPerformed
 
+    private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editButtonActionPerformed
+
     private void loadTableData() {
     DefaultTableModel blokATableModel = (DefaultTableModel) blokAtable.getModel();
     
@@ -329,6 +347,7 @@ public class dataPanelBlokA extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable blokAtable;
+    private javax.swing.JButton editButton;
     private javax.swing.JButton exportButton;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton refreshButton;

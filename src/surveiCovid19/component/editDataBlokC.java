@@ -125,8 +125,10 @@ public class editDataBlokC extends javax.swing.JPanel {
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel7.setText("Peningkatan Pendapatan Usaha Akibat Covid-19");
 
+        kirimButton.setBackground(new java.awt.Color(81, 137, 198));
         kirimButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        kirimButton.setText("KIRIM");
+        kirimButton.setForeground(new java.awt.Color(255, 255, 255));
+        kirimButton.setText("Kirim");
         kirimButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 kirimButtonActionPerformed(evt);
@@ -154,6 +156,9 @@ public class editDataBlokC extends javax.swing.JPanel {
         idPerusahaan_txt.setEditable(false);
         idPerusahaan_txt.setAutoscrolls(false);
 
+        hapus.setBackground(new java.awt.Color(81, 137, 198));
+        hapus.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        hapus.setForeground(new java.awt.Color(255, 255, 255));
         hapus.setText("Hapus");
         hapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
