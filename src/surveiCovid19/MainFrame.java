@@ -201,7 +201,7 @@ public class MainFrame extends javax.swing.JFrame {
         lihatDataTitle.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lihatDataTitle.setForeground(new java.awt.Color(244, 242, 242));
         lihatDataTitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icon/Asset 6@0.5x.png"))); // NOI18N
-        lihatDataTitle.setText("Lihat Data");
+        lihatDataTitle.setText("Lihat & Edit Data");
         lihatDataTitle.setBorder(null);
         lihatDataTitle.setContentAreaFilled(false);
         lihatDataTitle.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));

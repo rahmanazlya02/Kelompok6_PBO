@@ -277,7 +277,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/resources/icon/Asset 6@0.5x.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Lihat Data"/>
+            <Property name="text" type="java.lang.String" value="Lihat &amp; Edit Data"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
