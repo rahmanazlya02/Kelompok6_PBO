@@ -37,11 +37,9 @@ public class LoginFrame extends javax.swing.JFrame {
         passwordLabel = new javax.swing.JLabel();
         passwordField = new javax.swing.JPasswordField();
         loginButton = new javax.swing.JButton();
-        resetButton = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         usernameTextField = new javax.swing.JTextField();
         titleLabel1 = new javax.swing.JLabel();
-        resetButton1 = new javax.swing.JButton();
         register = new javax.swing.JButton();
         titleLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -140,42 +138,10 @@ public class LoginFrame extends javax.swing.JFrame {
             }
         });
 
-        resetButton.setBackground(new java.awt.Color(153, 153, 153));
-        resetButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        resetButton.setForeground(new java.awt.Color(153, 153, 153));
-        resetButton.setText("Reset");
-        resetButton.setBorder(null);
-        resetButton.setContentAreaFilled(false);
-        resetButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        resetButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        resetButton.setMargin(new java.awt.Insets(1, 0, 1, 1));
-        resetButton.setPreferredSize(new java.awt.Dimension(82, 25));
-        resetButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                resetButtonActionPerformed(evt);
-            }
-        });
-
         titleLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         titleLabel1.setForeground(java.awt.Color.darkGray);
         titleLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         titleLabel1.setText("Log in your account");
-
-        resetButton1.setBackground(new java.awt.Color(153, 153, 153));
-        resetButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        resetButton1.setForeground(new java.awt.Color(153, 153, 153));
-        resetButton1.setText("Forgot password?");
-        resetButton1.setBorder(null);
-        resetButton1.setContentAreaFilled(false);
-        resetButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        resetButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        resetButton1.setMargin(new java.awt.Insets(1, 0, 1, 1));
-        resetButton1.setPreferredSize(new java.awt.Dimension(82, 25));
-        resetButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                resetButton1ActionPerformed(evt);
-            }
-        });
 
         register.setBackground(new java.awt.Color(153, 153, 153));
         register.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -217,11 +183,7 @@ public class LoginFrame extends javax.swing.JFrame {
                             .addComponent(usernameLabel)
                             .addComponent(usernameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(contentLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, contentLoginLayout.createSequentialGroup()
-                                    .addComponent(resetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 154, Short.MAX_VALUE)
-                                    .addComponent(resetButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(loginButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(loginButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
                                 .addComponent(passwordField, javax.swing.GroupLayout.Alignment.LEADING))))
                     .addGroup(contentLoginLayout.createSequentialGroup()
                         .addGap(181, 181, 181)
@@ -245,17 +207,13 @@ public class LoginFrame extends javax.swing.JFrame {
                 .addComponent(passwordLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(contentLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(resetButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(resetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                .addGap(34, 34, 34)
                 .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(contentLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(register, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(titleLabel2))
-                .addGap(97, 97, 97)
+                .addGap(123, 123, 123)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16))
         );
@@ -286,10 +244,6 @@ public class LoginFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void resetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetButtonActionPerformed
-        clearForm();
-    }//GEN-LAST:event_resetButtonActionPerformed
-
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
 
         String username = usernameTextField.getText();
@@ -318,10 +272,6 @@ public class LoginFrame extends javax.swing.JFrame {
     private void passwordFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordFieldKeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordFieldKeyPressed
-
-    private void resetButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_resetButton1ActionPerformed
 
     private void registerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerActionPerformed
         contentLogin.setVisible(false); 
@@ -357,8 +307,6 @@ public class LoginFrame extends javax.swing.JFrame {
     private javax.swing.JPasswordField passwordField;
     private javax.swing.JLabel passwordLabel;
     private javax.swing.JButton register;
-    private javax.swing.JButton resetButton;
-    private javax.swing.JButton resetButton1;
     private javax.swing.JPanel sideLogin;
     private javax.swing.JLabel titleLabel;
     private javax.swing.JLabel titleLabel1;
