@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 29, 2024 at 02:35 AM
+-- Generation Time: Jun 30, 2024 at 06:14 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -49,7 +49,8 @@ CREATE TABLE `bloka` (
 --
 
 INSERT INTO `bloka` (`id_perusahaan`, `jabatan`, `jenis_kelamin`, `umur`, `nama_usaha`, `provinsi`, `kota`, `produk`, `produk_lain`, `kat_usaha`, `omset`, `jml_Pegawai_Sblm`, `jml_Pegawai_Skrg`, `operasi`) VALUES
-(12, 'Bukan Pemilik', 'Laki-Laki', 20, 'aqua', '12', '12', 'akka', 'akak', 'Pertanian; Peternakan; Perkebunan; Kehutanan dan Perikanan', '899999', 99, 99, 'Masih beroperasi seperti biasa');
+(12, 'Bukan Pemilik', 'Laki-Laki', 40, 'aqua', '13', '13', 'akka', 'akak', 'Pertanian; Peternakan; Perkebunan; Kehutanan dan Perikanan', '899999', 99, 99, 'Masih beroperasi seperti biasa'),
+(14, 'Pemilik', 'Laki-Laki', 35, 'pulpy', '12', '12', 'minuman', 'makanan', 'Industri Pengolahan', '100000', 80, 80, 'Masih beroperasi seperti biasa');
 
 -- --------------------------------------------------------
 
@@ -72,7 +73,8 @@ CREATE TABLE `blokc` (
 --
 
 INSERT INTO `blokc` (`id_perusahaan`, `income_Sblm_Covid`, `penurunan`, `penurunan_lain`, `peningkatan`, `peningkatan_lain`, `upaya_peningkatan`) VALUES
-(12, 'Menurun', '<= 20%', '25', '21 - 40%', '28', 'Peningkatan teknologi');
+(12, 'Menurun', '<= 20%', '25', '21 - 40%', '28', 'Peningkatan teknologi'),
+(14, 'Menurun', '<= 20%', '15', '<= 20%', '10', 'Kapasitas produksi meningkat');
 
 -- --------------------------------------------------------
 
