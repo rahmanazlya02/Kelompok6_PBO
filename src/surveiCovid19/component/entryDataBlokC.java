@@ -94,7 +94,9 @@ public class entryDataBlokC extends javax.swing.JPanel {
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel7.setText("Peningkatan Pendapatan Usaha Akibat Covid-19");
 
+        kirimButton.setBackground(new java.awt.Color(81, 137, 198));
         kirimButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        kirimButton.setForeground(new java.awt.Color(255, 255, 255));
         kirimButton.setText("KIRIM");
         kirimButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

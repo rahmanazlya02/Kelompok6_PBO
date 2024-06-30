@@ -115,6 +115,37 @@ public class Database implements Serializable{
         }
     }
     
+    public void updateBlokA(blokA blokA) throws SQLException {
+        Connection conn = getConnection();
+        try {
+            String sql = "UPDATE bloka SET jabatan = ?, jenis_kelamin = ?, umur = ?, nama_usaha = ?, provinsi = ?, kota = ?, produk = ?, produk_lain = ?, kat_usaha = ?, omset = ?, jml_pegawai_Sblm = ?, jml_pegawai_Skrg = ?, operasi = ? WHERE id_perusahaan = ?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+
+            pstmt.setString(1, blokA.getJabatan());
+            pstmt.setString(2, blokA.getJenisKelamin());
+            pstmt.setInt(3, blokA.getUmur());
+            pstmt.setString(4, blokA.getNamaUsaha());
+            pstmt.setString(5, blokA.getProvinsi());
+            pstmt.setString(6, blokA.getKota());
+            pstmt.setString(7, blokA.getProduk());
+            pstmt.setString(8, blokA.getProdukLain());
+            pstmt.setString(9, blokA.getKatUsaha());
+            pstmt.setString(10, blokA.getOmset());
+            pstmt.setInt(11, blokA.getJmlPegawaiSblm());
+            pstmt.setInt(12, blokA.getJmlPegawaiSkrg());
+            pstmt.setString(13, blokA.getOperasi());
+            pstmt.setInt(14, blokA.getIdPerusahaan());
+
+            pstmt.executeUpdate();
+        } catch (SQLException ex) {
+            throw ex;
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+    }
+    
     public void updateBlokC(blokC blokC) throws SQLException {
         Connection conn = getConnection();
         try {

@@ -17,15 +17,18 @@ public class entryDataBlokA extends javax.swing.JPanel {
     /**
      * Creates new form entryPanel
      */
-    String np;
-    int awal = 1;
     public entryDataBlokA() {
         initComponents();
+        clearForm();
     }
 
     private void clearForm(){ 
+        jabatanResponden.setSelectedIndex(-1);
+        jenisKelaminResponden.setSelectedIndex(-1);
         kodeKabKota.setText("");
         kodeProv.setText("");
+        sektorUsaha.setSelectedIndex(-1);
+        kondisiUsaha.setSelectedIndex(-1);
         
     }
     
@@ -178,7 +181,9 @@ public class entryDataBlokA extends javax.swing.JPanel {
         kondisiUsaha.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         kondisiUsaha.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masih beroperasi seperti biasa", "Beroperasi dengan penerapan WFH (remote atau teleworking ) untuk SEBAGIAN pegawai", "Beroperasi dengan penerapan WFH (remote atau teleworking ) untuk SELURUH pegawai", "Beroperasi dengan pengurangan kapasitas (jam kerja, mesin dan tenaga kerja)", "Beroperasi; bahkan melebihi kapasitas sebelum Covid-19", "Berhenti beroperasi" }));
 
+        kirimButton.setBackground(new java.awt.Color(81, 137, 198));
         kirimButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        kirimButton.setForeground(new java.awt.Color(255, 255, 255));
         kirimButton.setText("KIRIM");
         kirimButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

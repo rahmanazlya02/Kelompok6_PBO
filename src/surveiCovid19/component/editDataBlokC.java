@@ -14,16 +14,20 @@ import surveiCovid19.Database;
 import surveiCovid19.MainFrame;
 import surveiCovid19.blokC;
 import javax.swing.JScrollPane;
+import surveiCovid19.blokA;
 
 public class editDataBlokC extends javax.swing.JPanel {
+    private final JScrollPane contentScrollPane;
     private int idPerusahaan;
     /**
      * Creates new form entryPanel
      */
     CardLayout cardLayout;
-    public editDataBlokC(int idPerusahaan) throws SQLException {
+    public editDataBlokC(JScrollPane contentScrollPane, int idPerusahaan) throws SQLException {
+        this.contentScrollPane = contentScrollPane;
         initComponents();
         this.idPerusahaan = idPerusahaan;
+        idPerusahaan_txt.setEnabled(false);
         insertInfo();
     }
     
@@ -137,7 +141,7 @@ public class editDataBlokC extends javax.swing.JPanel {
 
         inputDataLabel.setFont(new java.awt.Font("Montserrat", 1, 36)); // NOI18N
         inputDataLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        inputDataLabel.setText("INPUT DATA");
+        inputDataLabel.setText("EDIT DATA");
 
         jLabel29.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel29.setText("BLOK C. DAMPAK TERHADAP KINERJA FINANSIAL");
@@ -290,7 +294,8 @@ public class editDataBlokC extends javax.swing.JPanel {
 
         try {
             Database.getInstance().updateBlokC(blokC);
-            JOptionPane.showMessageDialog(this, "Data Berhasil Tersimpan");
+            JOptionPane.showMessageDialog(this, "Data Berhasil Diedit");
+            contentScrollPane.setViewportView(new viewPanel(contentScrollPane, idPerusahaan));
         } catch (SQLException ex) {
             System.err.println(ex);
             JOptionPane.showMessageDialog(this, "Lengkapi Semua Data", "Data Gagal Tersimpan", JOptionPane.ERROR_MESSAGE);

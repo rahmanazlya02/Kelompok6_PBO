@@ -74,7 +74,7 @@
               <Font name="Montserrat" size="36" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="INPUT DATA"/>
+            <Property name="text" type="java.lang.String" value="EDIT DATA"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel27">

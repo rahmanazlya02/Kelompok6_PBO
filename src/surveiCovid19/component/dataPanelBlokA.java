@@ -308,6 +308,24 @@ public class dataPanelBlokA extends javax.swing.JPanel {
 
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
         // TODO add your handling code here:
+                 // Get the selected row index
+    int selectedRowIndex = blokAtable.getSelectedRow();
+    
+    // Check if a row is selected
+    if (selectedRowIndex != -1) {
+        // Get the ID of the selected perusahaan
+        int idPerusahaan = (int) blokAtable.getValueAt(selectedRowIndex, 0);
+        
+     try {
+            // Create the viewPanel with the necessary parameters and set it to the contentScrollPane
+            contentScrollPane.setViewportView(new editDataBlokA(idPerusahaan,contentScrollPane));
+        } catch (SQLException ex) {
+            Logger.getLogger(dataPanelBlokA.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    } else {
+        // Show a message if no row is selected
+        JOptionPane.showMessageDialog(this, "Pilih baris yang ingin dilihat.", "Peringatan", JOptionPane.WARNING_MESSAGE);
+    }
     }//GEN-LAST:event_editButtonActionPerformed
 
     private void loadTableData() {

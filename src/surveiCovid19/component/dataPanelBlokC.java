@@ -254,7 +254,7 @@ public class dataPanelBlokC extends javax.swing.JPanel {
         
      try {
             // Create the viewPanel with the necessary parameters and set it to the contentScrollPane
-            contentScrollPane.setViewportView(new viewPanel(contentScrollPane, idPerusahaan));
+            contentScrollPane.setViewportView(new editDataBlokA(idPerusahaan,contentScrollPane));
         } catch (SQLException ex) {
             Logger.getLogger(dataPanelBlokA.class.getName()).log(Level.SEVERE, null, ex);
         }

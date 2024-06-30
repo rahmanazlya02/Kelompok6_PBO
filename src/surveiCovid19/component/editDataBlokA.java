@@ -19,12 +19,12 @@ public class editDataBlokA extends javax.swing.JPanel {
     /**
      * Creates new form entryPanel
      */
-    String np;
-    int awal = 1;
+    
     public editDataBlokA( int idPerusahaan, JScrollPane contentScrollPane) throws SQLException {
         initComponents();
         this.idPerusahaan = idPerusahaan;
         this.contentScrollPane = contentScrollPane;
+        idPerusahaan_txt.setEnabled(false);
         insertInfo();
     }
 
@@ -127,7 +127,7 @@ public class editDataBlokA extends javax.swing.JPanel {
 
         inputDataLabel.setFont(new java.awt.Font("Montserrat", 1, 36)); // NOI18N
         inputDataLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        inputDataLabel.setText("INPUT DATA");
+        inputDataLabel.setText("EDIT DATA");
 
         jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel27.setText("BLOK A. KARAKTERISTIK PELAKU USAHA");
@@ -465,9 +465,26 @@ public class editDataBlokA extends javax.swing.JPanel {
 
     private void editBlokCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBlokCActionPerformed
         // TODO add your handling code here:
+        blokA blokA = new blokA();
+        blokA.setIdPerusahaan(Integer.parseInt(idPerusahaan_txt.getText()));
+        blokA.setNamaUsaha(namaUsaha.getText());
+        blokA.setJabatan((String)jabatanResponden.getSelectedItem());
+        blokA.setUmur(Integer.parseInt(usiaResponden.getText()));
+        blokA.setJenisKelamin((String)jenisKelamin.getSelectedItem());
+        blokA.setProvinsi(kodeProv.getText());
+        blokA.setKota(kodeKab.getText());
+        blokA.setProduk(produkUtama.getText());
+        blokA.setProdukLain(produkLain.getText());
+        blokA.setKatUsaha((String) sektor.getSelectedItem());
+        blokA.setOmset(omset.getText());
+        blokA.setJmlPegawaiSblm(Integer.parseInt(pegawaiSebelum.getText()));
+        blokA.setJmlPegawaiSkrg(Integer.parseInt(pegawai.getText()));
+        blokA.setOperasi((String) kondisi.getSelectedItem());
+
         try {
             // TODO add your handling code here:
-            this.contentScrollPane.setViewportView(new editDataBlokC(idPerusahaan));
+            Database.getInstance().updateBlokA(blokA);
+            this.contentScrollPane.setViewportView(new editDataBlokC(contentScrollPane, idPerusahaan));
         } catch (SQLException ex) {
             Logger.getLogger(viewPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
